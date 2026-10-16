@@ -1,0 +1,23 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    // Modules
+    "paths": {
+      "@/*": ["./node_modules/shirones/src/*"],
+      "@components/*": ["./node_modules/shirones/src/components/*"],
+      "@utils/*": ["./node_modules/shirones/src/utils/*"],
+      "@layouts/*": ["./node_modules/shirones/src/layouts/*"],
+      "@i18n/*": ["./node_modules/shirones/src/i18n/*"],
+      "@constants/*": ["./node_modules/shirones/src/constants/*"],
+      "@assets/*": ["./node_modules/shirones/src/assets/*"],
+    },
+
+    // JavaScript support
+    "checkJs": true,
+
+    // Language and Environment
+    "lib": ["ESNext"],
+  },
+}
