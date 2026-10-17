@@ -7,5 +7,5 @@ import { withUserConfig } from '@/utils/config-overlay.ts';
 export const licenseConfig: LicenseConfig = withUserConfig('license', {
   enable: true,
   name: 'CC BY 4.0',
-  url: 'https://creativecommons.org/licenses/by/4.0/',
+  url: 'https://creativecommons.org/licenses/by/4.0/deed.zh-hans',
 });

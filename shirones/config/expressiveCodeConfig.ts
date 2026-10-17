@@ -10,8 +10,8 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = withUserConfig(
   {
     // Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
     // 代码块跟随明暗模式切换深浅主题
-    theme: 'github-dark',
-    lightTheme: 'github-light',
-    darkTheme: 'github-dark',
+    theme: 'catppuccin-mocha',
+    lightTheme: 'catppuccin-latte',
+    darkTheme: 'catppuccin-mocha',
   },
 );

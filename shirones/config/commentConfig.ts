@@ -1,8 +1,4 @@
-import type {
-  CommentConfig,
-  GiscusConfig,
-  TwikooConfig,
-} from '@/types/commentConfig';
+import type { CommentConfig, GiscusConfig, TwikooConfig } from '@/types/commentConfig';
 import { withUserConfig } from '@/utils/config-overlay.ts';
 
 /**
