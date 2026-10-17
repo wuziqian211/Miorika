@@ -6,13 +6,23 @@ import shirones from 'shirones';
 // `shirones/config/` so they stay typed and version-controlled with your
 // content. This file only wires the theme in.
 export default defineConfig({
-  adapter: vercel({ isr: true }),
+  adapter: vercel({ imageService: true, isr: true }),
   integrations: [
     shirones({
       // Override individual components by mirroring the theme's structure in
       // `src/components/`, or point at them explicitly:
       // components: { 'atoms/blog/PostCard': './src/components/PostCard.astro' },
     }),
+    {
+      name: 'vercel-image-endpoint-route',
+      hooks: {
+        'astro:config:setup': ({ command, updateConfig }) => {
+          if (command === 'dev') {
+            updateConfig({ trailingSlash: 'ignore' });
+          }
+        },
+      },
+    },
   ],
   server: { host: true, port: 20211 },
 });
