@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "installCommand": "npm install --omit=dev",
+  "installCommand": "pnpm install --prod",
   "redirects": [
     { "source": "/api/(.*)", "destination": "https://api.yumeharu.top/api/$1" },
     { "source": "/friend/", "destination": "/friends/" },
