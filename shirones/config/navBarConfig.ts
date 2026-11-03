@@ -119,7 +119,7 @@ export const LinkPresets = {
   },
   About: {
     name: i18n(I18nKey.about),
-    url: '/about/',
+    url: '/about-me/',
     icon: 'material-symbols:info-outline-rounded',
     pageKey: 'about',
   },

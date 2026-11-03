@@ -7,7 +7,7 @@ import { withUserConfig } from '@/utils/config-overlay.ts';
  */
 export const permalinkConfig: PermalinkConfig = withUserConfig('permalink', {
   /** 是否启用全局 permalink 功能，关闭时使用默认的文件名作为链接 (/posts/<slug>/) */
-  enable: false,
+  enable: true,
   /**
    * permalink 格式模板
    * 支持的占位符：
@@ -30,5 +30,5 @@ export const permalinkConfig: PermalinkConfig = withUserConfig('permalink', {
    *
    * 注意：支持使用斜杠 '/' 构建嵌套路径。
    */
-  format: '%postname%',
+  format: 'archives/%year%/%monthnum%/%day%/%postname%',
 });

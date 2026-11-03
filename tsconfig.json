@@ -4,6 +4,7 @@
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     // Modules
+    "allowArbitraryExtensions": true,
     "paths": {
       "@/*": ["./node_modules/shirones/src/*"],
       "@components/*": ["./node_modules/shirones/src/components/*"],
