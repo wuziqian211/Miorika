@@ -11,7 +11,7 @@ category: 知识
 2022 年 10 月 15 日，梦春酱的粉丝数回升到 2000，于是梦春酱非常开心地发布了[一条动态](https://t.bilibili.com/716979665661591558)，这条动态的其中一张图片里就有 TA 的所有粉丝的头像与昵称。  
 那么，我们怎么生成这样子的图片呢？这篇文章就教您如何生成含所有粉丝的列表的图片。
 
-::: info
+:::info 适合人群
 这篇文章比较适合程序员、技术爱好者阅读，如果您没学过编程也可以按照本文的方法尝试。若您遇到任何问题，可以让梦春酱教您一步步操作。
 :::
 
@@ -19,7 +19,7 @@ category: 知识
 
 *[LTS]: 长期维护版
 
-::: info 安装编程软件
+:::info 安装编程软件
 本文中的代码都是 JavaScript 代码，所以您应该要预先安装 [Node.js](https://nodejs.org/zh-cn)（**建议您下载 LTS 版**）。您也可以使用其他编程语言，不过需要对本文中的代码进行一些小改动。
 :::
 
@@ -35,11 +35,11 @@ category: 知识
 const headers = { Cookie: 'SESSDATA=1a2b3c4d%2C1789012345%2C5e6f7*ef; bili_jct=0123456789abcdef0123456789abcdef', Origin: 'https://www.bilibili.com', Referer: 'https://www.bilibili.com/', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36' }; // 注意：此 Cookie 仅作为示例展示，请修改成自己的 Cookie
 ```
 
-::: caution 特别注意
+:::caution 特别注意
 **请不要把您刚刚复制的 “SESSDATA”“bili_jct” 中任何一个 Cookie 的值告诉任何人！它们的值是您的账号的登录信息，与账号、密码的作用相似，别人可能会利用这些值来登录您的账号。**
 :::
 
-::: warning Cookie 会定期更新
+:::warning Cookie 会定期更新
 目前，B 站的 Cookie 是定期更新的，所以建议您获取完 Cookie 后暂时不要访问 B 站的网页，防止原来的 Cookie 因更新而失效。待您完成所有步骤后，就可以访问 B 站的网页了。
 :::
 

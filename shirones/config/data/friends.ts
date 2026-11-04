@@ -185,6 +185,14 @@ const linksData: FriendItem[] = [
     siteurl: 'https://www.tv768.xyz/',
     tags: ['网站', '放送'],
   },
+  {
+    id: -19,
+    title: '弹幕塚',
+    imgurl: '/assets/images/friendship-links/danmaku-site.png',
+    desc: '某野生的神弹幕存档站ヽ(✿ﾟ▽ﾟ)ノ',
+    siteurl: 'https://danmaku.site/',
+    tags: ['网站', '技术'],
+  },
 ];
 const unavailableLinksData: FriendItem[] = [
   {
@@ -237,7 +245,7 @@ const unavailableLinksData: FriendItem[] = [
   },
   {
     id: -1007,
-    title: 'wuziqian211的网站（旧）',
+    title: 'wuziqian211 的网站（旧）',
     imgurl: '/images/friendship-links/wuziqian211-icoc-vc.png',
     desc: '梦春酱的旧网站，已不再更新',
     siteurl: 'https://wuziqian211.icoc.vc/',
