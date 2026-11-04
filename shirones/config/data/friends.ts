@@ -150,7 +150,7 @@ const linksData: FriendItem[] = [
     title: 'Xiaoyu 的软件下载站',
     imgurl: 'https://api.yumeharu.top/api/getuser?mid=444309392&type=avatar_redirect',
     desc: '这里是 Xiaoyu 的软件下载站！',
-    siteurl: 'https://imxiaoyu233.tttttttttt.top/',
+    siteurl: 'https://iamxiaoyu233.rth3.xyz/',
     tags: ['网站', '技术'],
   },
   {

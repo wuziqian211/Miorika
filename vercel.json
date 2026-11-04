@@ -9,12 +9,6 @@
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
-    },
-    {
-      "source": "/404.html",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex" }
-      ]
     }
   ],
   "installCommand": "pnpm install --prod",
@@ -23,10 +17,13 @@
     { "source": "/friend/", "destination": "/friends/" },
     { "source": "/friendship-link/", "destination": "/friends/" },
     { "source": "/friendship-links/", "destination": "/friends/" },
-    { "source": "/images/face_compressed.png", "destination": "/images/face.png_compressed.webp" },
-    { "source": "/images/icon_compressed.png", "destination": "/images/icon.png_compressed.webp" },
-    { "source": "/images/screenshot.png", "destination": "/images/screenshot.webp" },
-    { "source": "/images/screenshot_compressed.png", "destination": "/images/screenshot_compressed.webp" },
+    { "source": "/images/face_compressed.png", "destination": "/assets/images/face.png" },
+    { "source": "/images/face.png_compressed.webp", "destination": "/assets/images/face.png" },
+    { "source": "/images/icon_compressed.png", "destination": "/assets/images/icon.png" },
+    { "source": "/images/icon.png_compressed.webp", "destination": "/assets/images/icon.png" },
+    { "source": "/images/screenshot.png", "destination": "/assets/images/screenshot.webp" },
+    { "source": "/images/screenshot_compressed.png", "destination": "/assets/images/screenshot.webp" },
+    { "source": "/images/screenshot_compressed.webp", "destination": "/assets/images/screenshot.webp" },
     { "source": "/link/", "destination": "/friends/" },
     { "source": "/links/", "destination": "/friends/" },
     { "source": "/wiki/", "destination": "/about-me/" }
