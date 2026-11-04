@@ -68,7 +68,7 @@ const linksData: FriendItem[] = [
   {
     id: -4,
     title: "SuzuhaYuki's Blog",
-    imgurl: '/assets/images/friendship-links/blog-yuk1-uk.webp',
+    imgurl: 'https://yuk1.uk/assets/img/favicon.webp',
     desc: 'Time goes by, and the years go by.',
     siteurl: 'https://blog.yuk1.uk/',
     tags: ['网站', '技术'],
