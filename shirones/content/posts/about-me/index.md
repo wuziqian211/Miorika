@@ -16,21 +16,21 @@ permalink: /about-me/
 
 你好呀！这里是**晨叶梦春**，你也可以叫我 “**梦春酱**”，好开心在这个 Blog 遇见你吖 (灬ºωº灬)♡
 
-我是一个**可爱、活泼**的男生（~~这么可爱一定是男生~~，也特别喜欢**和许多人交朋友**哟 (＾◡＾)っ 而且对大家都**超级友善**的 ヾ(≧▽≦\*)o  
+我是一个**可爱、活泼**的男生（:spoiler[这么可爱一定是男生]，也特别喜欢**和许多人交朋友**哟 (＾◡＾)っ 而且对大家都**超级友善**的 ヾ(≧▽≦\*)o  
 来自湖北武汉，目前还是一名**大一萌新**，不过了解的知识也是非常多的 (\*^▽^\*)  
 我的性格有点小变幻，~~也具有**多重人格**~~，有时候很**可爱**，有时候很**好笑**，有时候会**假哭**，有时候会**装傲娇** (*ﾉωﾉ)
 
 ## 兴趣爱好
 
-我特别热爱**电脑技术**，写过很多**免费**的程序与脚本，还**拿过编程大赛的证书**、[**向B站提交过安全漏洞**](https://security.bilibili.com/thanks/?type=month&year=2025&month=5)捏 (≧∀≦)ゞ
+我特别热爱**电脑技术**，写过很多**免费**的程序与脚本，还**拿过编程大赛的证书**、[**向 B 站提交过安全漏洞**](https://security.bilibili.com/thanks/?type=month&year=2025&month=5)捏 (≧∀≦)ゞ
 
-![编程大赛获奖证书](/images/posts/award-certificates.jpg_compressed.webp)
+![编程大赛获奖证书](./award-certificates.jpg)
 
 我之所以这么热爱编程，是从 2017 年左右开始的呢～那个时候我刚接触 Windows 批处理脚本，对它能做的各种小魔法好好奇 (｡>ω<｡)  
 到了 2020 年，我开始用[**易语言**](https://www.dywt.com.cn/)做 Windows 窗口程序，觉得超好玩！  
 再到 2021 年，我学会了 [**Python**](https://www.python.org/)、[**HTML**、**CSS**、**JavaScript**](https://developer.mozilla.org/zh-CN/) 等等，于是就开始设计网页、写一些实用脚本，而且很多都是[**开源**](https://github.com/wuziqian211)的呢 (^・ω・^ )
 
-[![技能列表](/images/posts/skills.svg)](https://skillicons.dev/)
+[![技能列表](./skills.svg)](https://skillicons.dev/)
 
 我也超喜欢[**发布知识、科技区的作品**](#创作)，并以此获得了很多人的关注啦 (｡･ω･｡)
 
@@ -54,7 +54,7 @@ permalink: /about-me/
 - **▶️ 刷视频**：鬼畜、知识、科技……
 - **🥤 零食、饮料**
 - ~~💧 水动态、水视频、水群~~
-- ~~👗 女装~~
+- :spoiler[👗 女装]
 
 :::
 
@@ -71,18 +71,18 @@ permalink: /about-me/
 
 :::
 
-大家可以叫我 “**梦春酱**”“**梦春**”“小春”“~~春梦~~” 等等，只要是您喜欢的称呼都可以 (｀・ω・´)  
+大家可以叫我 “**梦春酱**”“**梦春**”“小春”:spoiler[“春梦”] 等等，只要是您喜欢的称呼都可以 (｀・ω・´)  
 “梦春” 的日语 “夢春” 的罗马音为 “yume haru”，所以我的英文名就是 “**YumeHaru**” 啦 (^・ω・^ )
 
 至于头像，看看下面的表格就可以啦！
 
 | 头像 | 开始使用时间 | 来源＆对应人物 | 备注 |
 | :--: | :----------: | :------------: | ---- |
-| <img class="avatar" alt="头像 1：《我的世界》里面的人物" src="/images/posts/face1.jpg" /> | 2018-05-12 左右 | 来自网络，是《我的世界》的角色 | |
-| <img class="avatar" alt="头像 2：哔哩哔哩 33 娘" src="/images/posts/face2.jpg" /> | 2020-03-27 | 哔哩哔哩 33 娘 | B 站 APP 中的随机头像，也是 “[噗尼噗尼元宵节特别企划](https://www.bilibili.com/blackboard/old-lantern.html)” 活动的头图 |
-| <img class="avatar" alt="头像 3：こんぱく ようむ（魂魄妖梦）" src="/images/posts/face3.jpg" /> | 2021-07-25 20:50 | 『ご注文はうさぎですか?』（《请问您今天要来点兔子吗？》），こんぱく ようむ（魂魄妖梦） | 有修改，原图为 かふう ちの（香风智乃） |
-| <img class="avatar" alt="头像 4：《夜明けの海》" src="/images/posts/face4.png_compressed.webp" /> | 2022-12-19 12:05 | [WERI 在 pixiv 创作的《夜明けの海》](https://www.pixiv.net/artworks/90624041) | 略有修改，如饱和度增强 |
-| <img class="avatar" alt="头像 5" src="/images/face.png_compressed.webp" /> | 2024-07-09 06:00 | [\[100 Artists Exhibition\] 10th Theme "Wa"](https://yande.re/post/show/718680) | 目前使用时长最久的头像 |
+| ![头像 1：《我的世界》里面的人物](./face1.jpg) | 2018-05-12 左右 | 来自网络，是《我的世界》的角色 | |
+| ![头像 2：哔哩哔哩 33 娘](./face2.jpg) | 2020-03-27 | 哔哩哔哩 33 娘 | B 站 APP 中的随机头像，也是 “[噗尼噗尼元宵节特别企划](https://www.bilibili.com/blackboard/old-lantern.html)” 活动的头图 |
+| ![头像 3：こんぱく ようむ（魂魄妖梦）](./face3.jpg) | 2021-07-25 20:50 | 『ご注文はうさぎですか?』（《请问您今天要来点兔子吗？》），こんぱく ようむ（魂魄妖梦） | 有修改，原图为 かふう ちの（香风智乃） |
+| ![头像 4：《夜明けの海》](./face4.png) | 2022-12-19 12:05 | [WERI 在 pixiv 创作的《夜明けの海》](https://www.pixiv.net/artworks/90624041) | 略有修改，如饱和度增强 |
+| ![头像 5](/assets/images/face.png) | 2024-07-09 06:00 | [\[100 Artists Exhibition\] 10th Theme "Wa"](https://yande.re/post/show/718680) | 目前使用时长最久的头像 |
 
 ## 社交平台与联系方式
 
@@ -140,7 +140,7 @@ permalink: /about-me/
 
 2024-08-28 05:30，梦春酱[将B站上的昵称从“**wuziqian211**”改为“**晨叶梦春**”](https://t.bilibili.com/980179685240471570)，这样TA就不会因为自己的昵称而尴尬了(｀・ω・´)
 
-![梦春酱的B站粉丝数变化情况](/images/posts/fans-changes_compressed.webp)
+![梦春酱的B站粉丝数变化情况](./fans-changes.webp)
 
 ::: details 展开大事年表！
 
@@ -179,7 +179,7 @@ permalink: /about-me/
 | 3月15日 | 发布了专栏[《（请看置顶动态，本专栏已无效）关注 wuziqian211 前必读》](https://www.bilibili.com/read/cv5112673/) | |
 | 3月18日 | [GoForceX](https://space.bilibili.com/96240239)发布了“[迫害wuziqian211](https://t.bilibili.com/367928549507620578)”的安卓APP | |
 | 3月19日 | 1. 发布了视频[《如果迫害wuziqian211会怎样？》](https://www.bilibili.com/video/BV1T7411R7pZ/)；<br />2. 自己做了个电脑版程序“[迫害wuziqian211](https://t.bilibili.com/368444632781272168)”。 | 2. [点击下载初版迫害程序](https://pan.baidu.com/s/1c6El3UCHVaIsLB9eEOtK9A?pwd=pohi)（提取码：pohi） |
-| 3月23日 | 发布了程序“[哔哩哔哩AV号与BV号互转程序](https://t.bilibili.com/369859347759990180)” | 由于这个程序在哔哩哔哩BV号刚启用后几小时内就发布了，所以有很多人下载程序，从而**使梦春酱快速涨粉**（~~不过这个程序就是通过调用B站的API获取BV号的，程序内部并没有AV号与BV号互转的算法~~） |
+| 3月23日 | 发布了程序“[哔哩哔哩AV号与BV号互转程序](https://t.bilibili.com/369859347759990180)” | 由于这个程序在哔哩哔哩BV号刚启用后几小时内就发布了，所以有很多人下载程序，从而**使梦春酱快速涨粉**（:spoiler[不过这个程序就是通过调用B站的API获取BV号的，程序内部并没有AV号与BV号互转的算法]） |
 | 3月24日 | **粉丝数达到了1000**，并且设置了私信的自动回复，拥有了粉丝勋章 | |
 | 3月27日 | 更换了头像，新头像为33娘的头像 | |
 | 4月5日 | 发布了视频[《wuziqian211 的片头》](https://www.bilibili.com/video/BV1664y1M7Fz/) | 这个视频比较“水” |

@@ -13,11 +13,11 @@ export const umamiConfig: UmamiConfig = withUserConfig('umami', {
   /** 全局 Umami 统计总开关：false 时完全不加载 oddmisc 运行时脚本与 DOM */
   enable: false,
   /** Umami 分享链接（必填） */
-  shareUrl: '',
+  shareUrl: 'https://cloud.umami.is/share/D7zRnCoJNjPXLXcK',
   /** Umami Website ID；与 scriptUrl 同时填写时启用访问采集 */
-  websiteId: '',
+  websiteId: '1c70ec2c-6116-4646-ba2e-8b2d6488e06e',
   /** Umami 采集脚本 URL；与 websiteId 同时填写时启用访问采集 */
-  scriptUrl: '',
+  scriptUrl: 'https://cloud.umami.is/script.js',
 });
 
 /**
