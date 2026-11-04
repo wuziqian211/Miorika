@@ -11,7 +11,7 @@ export default defineConfig([
     languageOptions: { globals: globals.browser, sourceType: 'script' },
   },
   {
-    files: ['*.{js,mjs,ts,mts}', 'src/**/*.{js,mjs,ts,mts,astro}'],
+    files: ['*.{js,mjs,ts,mts}', 'shirones/**/*.{js,mjs,ts,mts,astro}', 'src/**/*.{js,mjs,ts,mts,astro}'],
     languageOptions: { globals: globals.nodeBuiltin, sourceType: 'module' },
   },
   tseslint.configs.recommended,
