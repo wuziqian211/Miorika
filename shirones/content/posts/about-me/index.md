@@ -194,7 +194,7 @@ permalink: /about-me/
 | 8月23日 | **[粉丝数达到了2000](https://t.bilibili.com/426575730931956529)** | |
 | 8月24日 | 再次发布[介绍自己的动态](https://t.bilibili.com/427081609364495836) | 这条动态置顶了很长时间，有300多个赞 |
 | 8月26日 | **注册了QQ账号** | 实际上这个QQ账号并不是TA的第1个账号，而是第4个账号，但是因为梦春酱忘记了之前的3个账号中的2个账号的QQ号（现已找回），所以注册了新的账号 |
-| 8月30日 | 发布了那时的[第1000条动态](https://t.bilibili.com/429165007809182171)，内容只是“<img class="emote no-fancybox" alt="[tv_微笑]" src="/images/emote/tv_小电视/tv_微笑.gif" />” | |
+| 8月30日 | 发布了那时的[第1000条动态](https://t.bilibili.com/429165007809182171)，内容只是“<img class="emote" alt="[tv_微笑]" src="/assets/images/emote/tv_小电视/tv_微笑.gif" />” | |
 | 10月1日 | **[互动活跃度变成0](https://t.bilibili.com/441168389128158309)** | 21天没发动态了 |
 
 ### 2021年
