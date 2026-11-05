@@ -198,7 +198,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1001,
     title: '365云栈',
-    imgurl: '/images/friendship-links/blog-365sites-top.png',
+    imgurl: '/assets/images/friendship-links/blog-365sites-top.png',
     desc: '初阅不明言外意，重温方觉字中情',
     siteurl: 'https://blog.365sites.top/',
     tags: ['网站', '技术', '失效/注销'],
@@ -206,7 +206,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1002,
     title: '朋友圈实验室',
-    imgurl: '/images/friendship-links/aperturelaboratories-icoc-vc.png',
+    imgurl: '/assets/images/friendship-links/aperturelaboratories-icoc-vc.png',
     desc: '一个古朴的化学实验室',
     siteurl: 'https://aperturelaboratories.icoc.vc/',
     tags: ['网站', '放送', '失效/注销'],
@@ -214,7 +214,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1003,
     title: '知心她们工作室',
-    imgurl: '/images/friendship-links/shuxincm-jzfkw-net.png',
+    imgurl: '/assets/images/friendship-links/shuxincm-jzfkw-net.png',
     desc: '知心她们，心情美好。',
     siteurl: 'https://shuxincm.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -222,7 +222,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1004,
     title: '值关大众放送工作室',
-    imgurl: '/images/friendship-links/zhiguanmedia-jzfkw-net.png',
+    imgurl: '/assets/images/friendship-links/zhiguanmedia-jzfkw-net.png',
     desc: '做有情怀的媒体',
     siteurl: 'https://zhiguanmedia.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -230,7 +230,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1005,
     title: '社凤迷工作室',
-    imgurl: '/images/friendship-links/shefengmi-10-jzfkw-net.jpg',
+    imgurl: '/assets/images/friendship-links/shefengmi-10-jzfkw-net.jpg',
     desc: '看着社会与法 听着凤凰传奇',
     siteurl: 'https://shefengmi-10.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -238,7 +238,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1006,
     title: '铭琛天宏互娱工作室',
-    imgurl: '/images/friendship-links/mingchen2485-jzfkw-net.png',
+    imgurl: '/assets/images/friendship-links/mingchen2485-jzfkw-net.png',
     desc: '我们不做视频，我们只是央视网的搬运工。',
     siteurl: 'https://mingchen2485.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -246,7 +246,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1007,
     title: 'wuziqian211 的网站（旧）',
-    imgurl: '/images/friendship-links/wuziqian211-icoc-vc.png',
+    imgurl: '/assets/images/friendship-links/wuziqian211-icoc-vc.png',
     desc: '梦春酱的旧网站，已不再更新',
     siteurl: 'https://wuziqian211.icoc.vc/',
     tags: ['网站', '技术', '失效/注销'],
