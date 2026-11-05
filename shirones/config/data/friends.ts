@@ -193,6 +193,14 @@ const linksData: FriendItem[] = [
     siteurl: 'https://danmaku.site/',
     tags: ['网站', '技术'],
   },
+  {
+    id: -20,
+    title: '鹅滴博客',
+    imgurl: 'https://blog.goose.cc.cd/avatar.webp',
+    desc: '鹅滴博客嘎嘎',
+    siteurl: 'https://blog.goose.cc.cd/',
+    tags: ['网站', '技术'],
+  },
 ];
 const unavailableLinksData: FriendItem[] = [
   {

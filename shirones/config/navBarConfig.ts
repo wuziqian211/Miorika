@@ -119,7 +119,7 @@ export const LinkPresets = {
   },
   About: {
     name: i18n(I18nKey.about),
-    url: '/about-me/',
+    url: '/about/',
     icon: 'material-symbols:info-outline-rounded',
     pageKey: 'about',
   },
@@ -147,8 +147,8 @@ const defaultNavBarConfig: NavBarConfig = {
       children: [
         LinkPresets.Timeline,
         LinkPresets.Projects,
-        // LinkPresets.Devices,
-        // LinkPresets.Games,
+        LinkPresets.Devices,
+        LinkPresets.Games,
         LinkPresets.Skills,
         // 分类/标签入口不进导航菜单（避免菜单项过多），预设已登记指向独立页面，
         // 需要时取消注释即可
