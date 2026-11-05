@@ -1,0 +1,46 @@
+---
+// Adapted from src/pages/about.astro
+
+import { getEntry, render } from 'astro:content';
+import Card from '@components/atoms/display/Card.svelte';
+import Markdown from '@components/content/Markdown.astro';
+import MainGridLayout from '@layouts/MainGridLayout.astro';
+import { getMarkdownStylesheetAssets } from '@utils/markdown-assets';
+import CommentSection from '@components/organisms/comment/CommentSection.astro';
+import { commentConfig, resolveCommentOptions, siteConfig } from '@/config';
+
+const pagePath = 'message-board-old',
+      pageTitle = '留言板（旧网站）',
+      pageDescription = '这是我在旧网站上迁移过来的留言板，要在新网站评论请前往其他页面哟~';
+
+const pagePost = await getEntry('spec', pagePath);
+
+if (!pagePost) {
+  throw new Error('Page content not found');
+}
+
+const pageCommentEnabled = Boolean(resolveCommentOptions(commentConfig));
+
+const { Content, remarkPluginFrontmatter } = await render(pagePost);
+const markdownStylesheetAssets = await getMarkdownStylesheetAssets(remarkPluginFrontmatter.markdownSyntaxes);
+---
+<MainGridLayout title={pageTitle} description={pageDescription} hasComments={pageCommentEnabled}>
+  {markdownStylesheetAssets.map(({ pack, css }) => <style is:inline slot="head" data-swup-optional={pack} set:html={css} />)}
+  <div class="flex w-full rounded-[var(--shape-corner-l)] overflow-hidden relative min-h-32">
+    <Card color="var(--card-bg)" radius="l" class="z-10 p-6 lg:p-8 relative w-full">
+      <Markdown class="mt-2">
+        <Content />
+      </Markdown>
+    </Card>
+  </div>
+  <CommentSection
+    context={{
+      key: pagePath,
+      path: `/${pagePath}/`,
+      title: pageTitle,
+      language: siteConfig.lang,
+    }}
+    postCommentEnabled={pageCommentEnabled}
+    class="onload-animation"
+  />
+</MainGridLayout>
