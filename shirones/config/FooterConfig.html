@@ -20,4 +20,13 @@ img.emote {
   z-index: 99999;
 }
 </style>
-<script src="/assets/js/live2d.js"></script>
+<script>
+(() => {
+  if (screen.width >= 768) {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/live2d-widgets@1/dist/autoload.js';
+    script.async = true;
+    document.head.appendChild(script);
+  }
+})();
+</script>

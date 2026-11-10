@@ -1,4 +1,4 @@
-import type { CommentConfig, GiscusConfig, TwikooConfig } from '@/types/commentConfig';
+import type { CommentConfig, GiscusConfig, TwikooConfig, WalineConfig } from '@/types/commentConfig';
 import { withUserConfig } from '@/utils/config-overlay.ts';
 
 /**
@@ -23,12 +23,18 @@ import { withUserConfig } from '@/utils/config-overlay.ts';
  * 5. （可选）调整 `mapping`、`reactionsEnabled`、`inputPosition`、
  *    `theme.light` / `theme.dark`（giscus 主题键或自定义主题 CSS URL）、
  *    `lang` 与 `scriptUrl`（自托管 giscus 时替换）。
+ *
+ * 【开启 Waline 评论配置步骤】
+ * 1. 按 https://waline.js.org/guide/get-started/ 部署 Waline 服务端；
+ * 2. 将 `enable` 置为 `true`、`provider` 设为 `'waline'`，填入 waline.serverURL；
+ * 3. （可选）调整语言、登录、表情和分页；自托管客户端时同时替换同版本的 JS/CSS；
+ * 4. 文章 frontmatter 的 comment: false 仍可单独关闭评论；不启用浏览量采集。
  */
 export const commentConfig: CommentConfig = withUserConfig('comment', {
   /** 全局评论总开关：false 时完全不加载评论脚本与 DOM */
-  enable: false,
-  /** 评论提供商类型：'none' | 'twikoo' | 'giscus' */
-  provider: 'none',
+  enable: true,
+  /** 评论提供商类型：'none' | 'twikoo' | 'giscus' | 'waline' */
+  provider: 'waline',
   /** 是否开启视口懒加载：滚动进入视口才动态加载评论组件（推荐 true） */
   lazy: true,
   /** Twikoo 专有配置 */
@@ -69,9 +75,63 @@ export const commentConfig: CommentConfig = withUserConfig('comment', {
     /** giscus client.js 地址；自托管 giscus 时替换为自有地址 */
     scriptUrl: 'https://giscus.app/client.js',
   },
+  /** Waline 专有配置：https://waline.js.org/ */
+  waline: {
+    /** 服务端地址（必填）；留空时不渲染评论区 */
+    serverURL: 'https://waline.yumeharu.top',
+    /** 完整 UMD 客户端，按需加载；升级时与下面的 CSS 保持同版本 */
+    scriptUrl: 'https://unpkg.com/@waline/client@3/dist/waline.umd.js',
+    /** 客户端样式；同样只在评论区进入视口后加载 */
+    styleUrl: 'https://unpkg.com/@waline/client@3/dist/waline.css',
+    /** auto 跟随文章/站点语言；也可指定 Waline 语言码，如 zh-CN、en、jp */
+    lang: 'auto',
+    /** 可选文案覆盖；省略的字段使用 Waline 当前语言默认值 */
+    locale: {
+      /** 评论输入框提示；空字符串不显示提示 */
+      placeholder: 'Share your thoughts...',
+    },
+    /** false 关闭表情，true 使用默认表情；也可混合填写预设 URL 与自定义表情对象 */
+    emoji: true,
+    /** 排序：latest / oldest / hottest */
+    commentSorting: 'hottest',
+    /** 展示的身份信息字段 */
+    meta: ['nick', 'mail', 'link'],
+    /** 必填字段；空数组允许匿名评论 */
+    requiredMeta: [],
+    /** 登录模式：enable / disable / force */
+    login: 'enable',
+    /** 评论字数限制，设置为 0 时无限制 */
+    wordLimit: [1, 100000],
+    /** 每页条数 */
+    pageSize: 20,
+    /** 图片上传：true 时 Waline 将图片编码为 Base64，false 关闭；只接受 true / false，不支持自定义函数 */
+    imageUploader: true,
+    /** 代码高亮：true 使用 Waline 内置高亮器，false 关闭；只接受 true / false */
+    highlighter: true,
+    /** TeX：true 在预览中提示不支持 TeX，false 不解析 TeX；只接受 true / false */
+    texRenderer: false,
+    /** 是否隐藏页脚版权信息 */
+    noCopyright: false,
+    /** 是否隐藏 RSS 订阅链接 */
+    noRss: true,
+    /** reCAPTCHA v3 密钥 */
+    recaptchaV3Key: '',
+    /** Cloudflare Turnstile 密钥 */
+    turnstileKey: '0x4AAAAAAD9yf9VKE8ZfsWRs',
+    /** 是否显示文章表情反应 */
+    reaction: [
+      '/assets/images/emote/tv_小电视/tv_点赞.gif',
+      '/assets/images/emote/tv_小电视/tv_doge.gif',
+      '/assets/images/emote/tv_小电视/tv_疑问.gif',
+      '/assets/images/emote/tv_小电视/tv_微笑.gif',
+      '/assets/images/emote/tv_小电视/tv_难过.gif',
+      '/assets/images/emote/tv_小电视/tv_调侃.png',
+      '/assets/images/emote/tv_小电视/tv_思考.gif',
+    ],
+  },
 });
 
-export type ResolvedCommentOptions = { provider: 'twikoo'; lazy: boolean; twikoo: TwikooConfig } | { provider: 'giscus'; lazy: boolean; giscus: GiscusConfig } | null;
+export type ResolvedCommentOptions = { provider: 'twikoo'; lazy: boolean; twikoo: TwikooConfig } | { provider: 'giscus'; lazy: boolean; giscus: GiscusConfig } | { provider: 'waline'; lazy: boolean; waline: WalineConfig } | null;
 
 /**
  * 解析并校验评论配置。未启用、提供商为 none 或关键参数缺失时返回 null。
@@ -85,8 +145,7 @@ export const resolveCommentOptions = (config: CommentConfig): ResolvedCommentOpt
     return { provider: 'twikoo', lazy: config.lazy, twikoo: { ...config.twikoo, envId, scriptUrl } };
   }
   if (config.provider === 'giscus') {
-    const repo = config.giscus.repo?.trim(),
-          repoId = config.giscus.repoId?.trim(),
+    const repo = config.giscus.repo?.trim(), repoId = config.giscus.repoId?.trim(),
           categoryId = config.giscus.categoryId?.trim();
     if (!repo || !repoId || !categoryId) return null;
     return {
@@ -104,6 +163,28 @@ export const resolveCommentOptions = (config: CommentConfig): ResolvedCommentOpt
         },
         scriptUrl: config.giscus.scriptUrl?.trim(),
       },
+    };
+  }
+  if (config.provider === 'waline') {
+    const { waline } = config, serverURL = waline?.serverURL?.trim(),
+          scriptUrl = waline?.scriptUrl?.trim(), styleUrl = waline?.styleUrl?.trim();
+    if (!waline || !serverURL || !scriptUrl || !styleUrl) return null;
+    try {
+      const server = new URL(serverURL);
+      if (!['http:', 'https:'].includes(server.protocol)) return null;
+    } catch {
+      return null;
+    }
+    // 选项以 JSON 写入页面，函数会被静默丢弃；构建时直接报错，避免自定义回调悄悄失效。
+    for (const key of ['imageUploader', 'highlighter', 'texRenderer'] as const) {
+      if (typeof waline[key] === 'function') {
+        throw new TypeError(`commentConfig.waline.${key} only accepts true or false: Waline options reach the browser as JSON, which cannot carry functions.`);
+      }
+    }
+    return {
+      provider: 'waline',
+      lazy: config.lazy,
+      waline: { ...waline, serverURL, scriptUrl, styleUrl, lang: waline.lang?.trim() || 'auto' },
     };
   }
   return null;

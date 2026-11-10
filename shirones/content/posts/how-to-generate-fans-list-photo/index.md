@@ -49,13 +49,31 @@ const headers = { Cookie: 'SESSDATA=1a2b3c4d%2C1789012345%2C5e6f7*ef; bili_jct=0
 
 B 站官方给我们提供的==获取指定用户的粉丝列表==的 API 是 <https://api.bilibili.com/x/relation/fans>，请求方式是 GET。  
 这个 API **需要您提供有效的 Cookie**，返回的列表按照关注时间的先后顺序**逆向**排序（越晚关注，就在列表的越前面）。  
-主要的 URL 参数为：
 
-| 参数名 | 内容 | 必要性 | 备注 |
-| :----: | :--: | :----: | ---- |
-| vmid | 目标用户 UID | 必要 | |
-| ps | 每页项数 | 非必要 | 默认为 50，且最多为 50 |
-| pn | 页码 | 非必要 | 默认为 1 |
+::::field-group[主要 URL 参数]
+
+:::field vmid
+@type number
+@required
+
+目标用户 UID
+:::
+
+:::field ps
+@type number
+@optional
+
+每页项数，默认为 50，且最多为 50
+:::
+
+:::field pn
+@type number
+@optional
+
+页码，默认为 1
+:::
+
+::::
 
 如果这个 API 被正确调用，那么会得到像下面这样的 JSON 回复（仅作示例，省略了部分项目）：
 
@@ -133,11 +151,17 @@ for (let i = 1; i <= 20; i++) { // 获取前 20 页粉丝的信息，每页 50 �
 目前 “followers” 变量虽然存储了所有粉丝的信息，但是这个信息不够详细，比如不包括等级、头像框信息等，我们要想办法获取更详细的粉丝信息。
 
 ==获取多个用户的详细信息==的 API 是 <https://api.vc.bilibili.com/x/im/user_infos>，请求方式是 GET。  
-主要的 URL 参数为：
 
-| 参数名 | 内容 | 必要性 | 备注 |
-| :----: | :--: | :----: | ---- |
-| uids | 目标用户的 UID 列表 | 必要 | 每个成员间用英文逗号 `,` 分割 |
+::::field-group[主要 URL 参数]
+
+:::field uids
+@type number[]
+@required
+
+目标用户的 UID 列表，每个成员间用英文逗号 `,` 分割
+:::
+
+::::
 
 如果这个 API 被正确调用，那么会得到像下面这样的 JSON 回复（仅作示例，省略了部分项目）：
 
@@ -192,11 +216,17 @@ for (let i = 1; i <= 20; i++) { // 获取前 20 页粉丝的信息，每页 50 �
 ```
 
 ==获取多个用户的关系状态数==的 API 是 <https://api.bilibili.com/x/relation/stats>，请求方式是 GET。  
-主要的 URL 参数为：
 
-| 参数名 | 内容 | 必要性 | 备注 |
-| :----: | :--: | :----: | ---- |
-| mids | 目标用户 UID 列表 | 必要 | 每个成员间用英文逗号 `,` 分割，**最多 20 个成员** |
+::::field-group[主要 URL 参数]
+
+:::field mids
+@type number[]
+@required
+
+目标用户 UID 列表，每个成员间用英文逗号 `,` 分割，**最多 20 个成员**
+:::
+
+::::
 
 如果这个 API 被正确调用，那么会得到像下面这样的 JSON 回复（仅作示例，省略了部分项目）：
 

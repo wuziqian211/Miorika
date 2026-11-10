@@ -24,6 +24,7 @@
     { "source": "/images/screenshot.png", "destination": "/assets/images/screenshot.webp" },
     { "source": "/images/screenshot_compressed.png", "destination": "/assets/images/screenshot.webp" },
     { "source": "/images/screenshot_compressed.webp", "destination": "/assets/images/screenshot.webp" },
+    { "source": "/images/(.*)", "destination": "/assets/images/$1" },
     { "source": "/link/", "destination": "/friends/" },
     { "source": "/links/", "destination": "/friends/" },
     { "source": "/wiki/", "destination": "/about-me/" }

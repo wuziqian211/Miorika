@@ -11,21 +11,22 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-emote": "node ./scripts/generate-emote.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
     "@astrojs/svelte": "^9.1.2",
-    "@astrojs/vercel": "^11.0.18",
+    "@astrojs/vercel": "^11.0.20",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-regular": "^1.2.4",
     "@iconify-json/fa6-solid": "^1.2.4",
-    "@iconify-json/material-symbols": "^1.2.97",
+    "@iconify-json/material-symbols": "^1.2.98",
     "@iconify-json/simple-icons": "^1.2.101",
-    "astro": "^7.4.5",
+    "astro": "^7.4.8",
     "astro-icon": "^1.2.0",
     "sharp": "^0.35.5",
-    "shirones": "^0.1.5",
+    "shirones": "^0.1.6",
     "svelte": "^5.57.3",
     "typescript": "^6.0.3"
   },
