@@ -1,5 +1,6 @@
 import type { CommentConfig, GiscusConfig, TwikooConfig, WalineConfig } from '@/types/commentConfig';
 import { withUserConfig } from '@/utils/config-overlay.ts';
+import emojiList from './data/emoteList.json';
 
 /**
  * 评论系统配置单一真源。
@@ -91,7 +92,7 @@ export const commentConfig: CommentConfig = withUserConfig('comment', {
       placeholder: 'Share your thoughts...',
     },
     /** false 关闭表情，true 使用默认表情；也可混合填写预设 URL 与自定义表情对象 */
-    emoji: true,
+    emoji: emojiList,
     /** 排序：latest / oldest / hottest */
     commentSorting: 'hottest',
     /** 展示的身份信息字段 */
