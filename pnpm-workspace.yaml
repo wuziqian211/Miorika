@@ -6,3 +6,5 @@ allowBuilds:
 onlyBuiltDependencies:
   - esbuild
   - sharp
+patchedDependencies:
+  shirones@0.1.6: patches/shirones@0.1.6.patch

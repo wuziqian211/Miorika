@@ -12,16 +12,16 @@ export const profileConfig: ProfileConfig = withUserConfig('profile', {
   links: [
     {
       name: 'Bilibili',
-      icon: 'fa6-brands:bilibili', // Visit https://icones.js.org/ for icon codes
+      icon: 'fa7-brands:bilibili', // Visit https://icones.js.org/ for icon codes
       // You will need to install the corresponding icon set if it's not already included
       // `pnpm add @iconify-json/<icon-set-name>`
       url: 'https://space.bilibili.com/425503913',
     },
     { name: 'GitHub', icon: 'fa7-brands:github', url: 'https://github.com/wuziqian211' },
-    { name: 'QQ', icon: 'fa6-brands:qq', url: 'https://qm.qq.com/q/9aDPrarwC6' },
-    { name: 'X', icon: 'fa6-brands:x-twitter', url: 'https://x.com/wuziqian211' },
-    { name: 'Steam', icon: 'fa6-brands:steam', url: 'https://steamcommunity.com/id/wuziqian211/' },
-    { name: 'Pixiv', icon: 'fa6-brands:pixiv', url: 'https://www.pixiv.net/users/77695887' },
-    { name: 'Email', icon: 'fa6-solid:envelope', url: 'mailto:wuziqian211@126.com' },
+    { name: 'QQ', icon: 'fa7-brands:qq', url: 'https://qm.qq.com/q/9aDPrarwC6' },
+    { name: 'X', icon: 'fa7-brands:x-twitter', url: 'https://x.com/wuziqian211' },
+    { name: 'Steam', icon: 'fa7-brands:steam', url: 'https://steamcommunity.com/id/wuziqian211/' },
+    { name: 'Pixiv', icon: 'fa7-brands:pixiv', url: 'https://www.pixiv.net/users/77695887' },
+    { name: 'Email', icon: 'fa7-solid:envelope', url: 'mailto:wuziqian211@126.com' },
   ],
 });

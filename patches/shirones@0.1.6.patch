@@ -1,0 +1,31 @@
+diff --git a/index.js b/index.js
+index 42d091cb07715c07e021a10c158fa71a041fa04c..8729b114a1c2d91329a3b3c8533dcbd3f02181cc 100644
+--- a/index.js
++++ b/index.js
+@@ -1906,7 +1906,8 @@ function shironesIconRegeneration(paths, logger) {
+     "generated",
+     "local-icon-collections.ts"
+   );
+-  const roots = [paths.packageSrc, paths.contentDir];
++  // Include project configuration overrides when collecting offline icons.
++  const roots = [paths.packageSrc, paths.contentDir, paths.configDir];
+   const localIconDir = join10(paths.projectRoot, "src", "icons");
+   const generate = () => {
+     try {
+@@ -1924,6 +1925,7 @@ function shironesIconRegeneration(paths, logger) {
+   let isBuild = false;
+   return {
+     name: "shirone:icon-regeneration",
++    enforce: "pre",
+     configResolved(config) {
+       isBuild = config.command === "build";
+     },
+@@ -1938,7 +1940,7 @@ function shironesIconRegeneration(paths, logger) {
+     // the bare specifier, because which one shows up depends on how the
+     // theme is being consumed.
+     resolveId(source) {
+-      const requested = normalisePath(source);
++      const requested = normalisePath(withoutExtension(source));
+       if (requested !== normalisePath(ICON_COLLECTIONS_SPECIFIER) && requested !== normalisePath(withoutExtension(userCopy)) && requested !== normalisePath(withoutExtension(packageCopy))) {
+         return null;
+       }
