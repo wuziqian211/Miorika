@@ -126,7 +126,7 @@ export const LinkPresets = {
   GitHub: {
     name: 'GitHub',
     url: 'https://github.com/wuziqian211/Miorika',
-    icon: 'fa6-brands:github',
+    icon: 'fa7-brands:github',
     external: true,
     pageKey: 'github',
   },

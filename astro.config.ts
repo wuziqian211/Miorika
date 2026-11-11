@@ -1,3 +1,4 @@
+import { copyFile, readdir } from 'node:fs/promises';
 import vercel from '@astrojs/vercel';
 import { defineConfig } from 'astro/config';
 import shirones from 'shirones';
@@ -15,6 +16,31 @@ export default defineConfig({
       // components: { 'atoms/blog/PostCard': './src/components/PostCard.astro' },
     }),
     icon(),
+    {
+      name: 'vercel-sitemap-output',
+      hooks: {
+        'astro:config:setup': ({ command, config, updateConfig }) => {
+          if (command !== 'build') return;
+
+          const staticDir = new URL('.vercel/output/static/', config.root);
+          // The adapter copies static files before Shirones generates its sitemap.
+          // Append this hook after the theme's bundled sitemap integration.
+          updateConfig({
+            integrations: [{
+              name: 'vercel-sitemap-copy',
+              hooks: {
+                'astro:build:done': async ({ dir }) => {
+                  const files = await readdir(dir);
+                  await Promise.all(files
+                    .filter(file => /^sitemap.*\.xml$/.test(file))
+                    .map(file => copyFile(new URL(file, dir), new URL(file, staticDir))));
+                },
+              },
+            }],
+          });
+        },
+      },
+    },
     {
       name: 'vercel-image-endpoint-route',
       hooks: {

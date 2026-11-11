@@ -27,6 +27,7 @@
     { "source": "/images/(.*)", "destination": "/assets/images/$1" },
     { "source": "/link/", "destination": "/friends/" },
     { "source": "/links/", "destination": "/friends/" },
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml" },
     { "source": "/wiki/", "destination": "/about-me/" }
   ]
 }

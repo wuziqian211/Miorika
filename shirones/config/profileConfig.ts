@@ -17,7 +17,7 @@ export const profileConfig: ProfileConfig = withUserConfig('profile', {
       // `pnpm add @iconify-json/<icon-set-name>`
       url: 'https://space.bilibili.com/425503913',
     },
-    { name: 'GitHub', icon: 'fa6-brands:github', url: 'https://github.com/wuziqian211' },
+    { name: 'GitHub', icon: 'fa7-brands:github', url: 'https://github.com/wuziqian211' },
     { name: 'QQ', icon: 'fa6-brands:qq', url: 'https://qm.qq.com/q/9aDPrarwC6' },
     { name: 'X', icon: 'fa6-brands:x-twitter', url: 'https://x.com/wuziqian211' },
     { name: 'Steam', icon: 'fa6-brands:steam', url: 'https://steamcommunity.com/id/wuziqian211/' },

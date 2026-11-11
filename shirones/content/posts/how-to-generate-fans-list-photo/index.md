@@ -8,7 +8,7 @@ tags:
 category: 知识
 ---
 
-2022 年 10 月 15 日，梦春酱的粉丝数回升到 2000，于是梦春酱非常开心地发布了[一条动态](https://t.bilibili.com/716979665661591558){target="_blank" rel="noopener external nofollow noreferrer"}，这条动态的其中一张图片里就有 TA 的所有粉丝的头像与昵称。  
+2022 年 10 月 15 日，梦春酱的粉丝数回升到 2000，于是梦春酱非常开心地发布了<a target="_blank" rel="noopener external nofollow noreferrer" href="https://t.bilibili.com/716979665661591558">一条动态</a>，这条动态的其中一张图片里就有 TA 的所有粉丝的头像与昵称。  
 那么，我们怎么生成这样子的图片呢？这篇文章就教您如何生成含所有粉丝的列表的图片。
 
 :::info 适合人群
@@ -20,11 +20,11 @@ category: 知识
 *[LTS]: 长期维护版
 
 :::info 安装编程软件
-本文中的代码都是 JavaScript 代码，所以您应该要预先安装 [Node.js](https://nodejs.org/zh-cn){target="_blank" rel="noopener external nofollow noreferrer"}（**建议您下载 LTS 版**）。您也可以使用其他编程语言，不过需要对本文中的代码进行一些小改动。
+本文中的代码都是 JavaScript 代码，所以您应该要预先安装 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://nodejs.org/zh-cn">Node.js</a>（**建议您下载 LTS 版**）。您也可以使用其他编程语言，不过需要对本文中的代码进行一些小改动。
 :::
 
 首先，我们应该获取 B 站页面的 Cookie。  
-以 Google Chrome 为例：在**登录了 B 站账号**的浏览器中，打开 [B 站任意页面](https://www.bilibili.com/){target="_blank" rel="noopener external nofollow noreferrer"}，打开开发者工具（一般按 F12 键即可），在工具上方点击 “应用”，在左侧点击 “存储” 部分中 “Cookie” 左边的箭头，点击下面的 B 站网址，在右侧表格的 “名称” 一栏中找到 “SESSDATA” 与 “bili_jct”，分别双击它们右边的 “值”，复制下来，这样您就获取到了 Cookie。  
+以 Google Chrome 为例：在**登录了 B 站账号**的浏览器中，打开 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/">B 站任意页面</a>，打开开发者工具（一般按 F12 键即可），在工具上方点击 “应用”，在左侧点击 “存储” 部分中 “Cookie” 左边的箭头，点击下面的 B 站网址，在右侧表格的 “名称” 一栏中找到 “SESSDATA” 与 “bili_jct”，分别双击它们右边的 “值”，复制下来，这样您就获取到了 Cookie。  
 
 ![获取 Cookie](./get-cookie.webp)
 
@@ -47,7 +47,7 @@ const headers = { Cookie: 'SESSDATA=1a2b3c4d%2C1789012345%2C5e6f7*ef; bili_jct=0
 
 *[API]: 应用程序接口
 
-B 站官方给我们提供的==获取指定用户的粉丝列表==的 API 是 <https://api.bilibili.com/x/relation/fans>，请求方式是 GET。  
+B 站官方给我们提供的==获取指定用户的粉丝列表==的 API 是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://api.bilibili.com/x/relation/fans">https://api.bilibili.com/x/relation/fans</a>，请求方式是 GET。  
 这个 API **需要您提供有效的 Cookie**，返回的列表按照关注时间的先后顺序**逆向**排序（越晚关注，就在列表的越前面）。  
 
 ::::field-group[主要 URL 参数]
@@ -150,7 +150,7 @@ for (let i = 1; i <= 20; i++) { // 获取前 20 页粉丝的信息，每页 50 �
 
 目前 “followers” 变量虽然存储了所有粉丝的信息，但是这个信息不够详细，比如不包括等级、头像框信息等，我们要想办法获取更详细的粉丝信息。
 
-==获取多个用户的详细信息==的 API 是 <https://api.vc.bilibili.com/x/im/user_infos>，请求方式是 GET。  
+==获取多个用户的详细信息==的 API 是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://api.vc.bilibili.com/x/im/user_infos">https://api.vc.bilibili.com/x/im/user_infos</a>，请求方式是 GET。  
 
 ::::field-group[主要 URL 参数]
 
@@ -215,7 +215,7 @@ for (let i = 1; i <= 20; i++) { // 获取前 20 页粉丝的信息，每页 50 �
 }
 ```
 
-==获取多个用户的关系状态数==的 API 是 <https://api.bilibili.com/x/relation/stats>，请求方式是 GET。  
+==获取多个用户的关系状态数==的 API 是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://api.bilibili.com/x/relation/stats">https://api.bilibili.com/x/relation/stats</a>，请求方式是 GET。  
 
 ::::field-group[主要 URL 参数]
 

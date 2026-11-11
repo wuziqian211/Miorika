@@ -1,0 +1,26 @@
+/* Keep avatar sizing and text wrapping local to the avatar history table. */
+.custom-md .avatar-history > table {
+  width: 100%;
+  min-width: 40rem;
+  table-layout: fixed;
+}
+
+.custom-md .avatar-history :is(th, td) {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+}
+
+.custom-md .avatar-history :is(th, td):first-child {
+  width: 8rem;
+}
+
+.custom-md .avatar-history :is(th, td):nth-child(2) {
+  width: 10.5rem;
+}
+
+.custom-md .avatar-history td img {
+  width: 6rem;
+  height: auto;
+  margin: 0 auto;
+}

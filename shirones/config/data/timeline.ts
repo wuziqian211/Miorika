@@ -18,7 +18,7 @@ export const timelineData: TimelineItem[] = [
     ],
     tags: ['Astro', 'Svelte 5', 'M3E', 'Tailwind 4'],
     links: [
-      { label: 'GitHub Repository', url: 'https://github.com/LyraVoid/Shirone', icon: 'fa6-brands:github' },
+      { label: 'GitHub Repository', url: 'https://github.com/LyraVoid/Shirone', icon: 'fa7-brands:github' },
     ],
     icon: 'material-symbols:rocket-launch-rounded',
     featured: true,
