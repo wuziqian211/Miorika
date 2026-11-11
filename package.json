@@ -12,7 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-emote": "node ./scripts/generate-emote.js"
+    "generate-emote": "node ./scripts/generate-emote.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
