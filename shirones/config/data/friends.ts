@@ -17,18 +17,33 @@ export interface FriendItem {
 export interface APIResponse {
   code: number;
   message: string;
-  data: { n: UserItem[]; d?: UserItem[]; m: number };
+  data: {
+    /** 正常用户 */
+    n: UserItem[];
+    /** 已注销用户 */
+    d?: UserItem[];
+    /** 更新时间戳（毫秒级） */
+    m: number;
+  };
   extInfo: Record<string, unknown>;
 }
 
 export interface UserItem {
+  /** 头像 */
   a: string;
-  i?: 0 | 1 | 2;
+  /** 头像图标 */
+  i?: 0/* UP 主认证 */ | 1/* 机构认证 */ | 2/* 大会员 */;
+  /** 是否拥有数字藏品图标 */
   n?: 0 | 1;
+  /** 认证信息 */
   o?: string;
+  /** 昵称颜色 */
   c?: string;
+  /** 昵称 */
   t: string;
+  /** 个性签名 */
   d: string;
+  /** 空间链接 */
   l: string;
 }
 

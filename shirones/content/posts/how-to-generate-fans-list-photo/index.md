@@ -8,7 +8,7 @@ tags:
 category: 知识
 ---
 
-2022 年 10 月 15 日，梦春酱的粉丝数回升到 2000，于是梦春酱非常开心地发布了[一条动态](https://t.bilibili.com/716979665661591558)，这条动态的其中一张图片里就有 TA 的所有粉丝的头像与昵称。  
+2022 年 10 月 15 日，梦春酱的粉丝数回升到 2000，于是梦春酱非常开心地发布了[一条动态](https://t.bilibili.com/716979665661591558){target="_blank" rel="noopener external nofollow noreferrer"}，这条动态的其中一张图片里就有 TA 的所有粉丝的头像与昵称。  
 那么，我们怎么生成这样子的图片呢？这篇文章就教您如何生成含所有粉丝的列表的图片。
 
 :::info 适合人群
@@ -20,11 +20,11 @@ category: 知识
 *[LTS]: 长期维护版
 
 :::info 安装编程软件
-本文中的代码都是 JavaScript 代码，所以您应该要预先安装 [Node.js](https://nodejs.org/zh-cn)（**建议您下载 LTS 版**）。您也可以使用其他编程语言，不过需要对本文中的代码进行一些小改动。
+本文中的代码都是 JavaScript 代码，所以您应该要预先安装 [Node.js](https://nodejs.org/zh-cn){target="_blank" rel="noopener external nofollow noreferrer"}（**建议您下载 LTS 版**）。您也可以使用其他编程语言，不过需要对本文中的代码进行一些小改动。
 :::
 
 首先，我们应该获取 B 站页面的 Cookie。  
-以 Google Chrome 为例：在**登录了 B 站账号**的浏览器中，打开 [B 站任意页面](https://www.bilibili.com/)，打开开发者工具（一般按 F12 键即可），在工具上方点击 “应用”，在左侧点击 “存储” 部分中 “Cookie” 左边的箭头，点击下面的 B 站网址，在右侧表格的 “名称” 一栏中找到 “SESSDATA” 与 “bili_jct”，分别双击它们右边的 “值”，复制下来，这样您就获取到了 Cookie。  
+以 Google Chrome 为例：在**登录了 B 站账号**的浏览器中，打开 [B 站任意页面](https://www.bilibili.com/){target="_blank" rel="noopener external nofollow noreferrer"}，打开开发者工具（一般按 F12 键即可），在工具上方点击 “应用”，在左侧点击 “存储” 部分中 “Cookie” 左边的箭头，点击下面的 B 站网址，在右侧表格的 “名称” 一栏中找到 “SESSDATA” 与 “bili_jct”，分别双击它们右边的 “值”，复制下来，这样您就获取到了 Cookie。  
 
 ![获取 Cookie](./get-cookie.webp)
 
