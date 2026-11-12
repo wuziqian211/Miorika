@@ -1,7 +1,7 @@
 ---
 title: Google 生草翻译 100 次昵称及个性签名
 published: 2021-11-07 14:26:05
-updated: 2025-11-21 00:23:17
+updated: 2026-11-05 17:48:04
 description: 《论 wuziqian211 的昵称与个性签名是如何被 “生草” 100 次的》
 tags:
   - 谷歌

@@ -1,7 +1,7 @@
 ---
 title: 如何生成 B 站粉丝列表图片
 published: 2022-12-10 20:42:22
-updated: 2026-07-02 02:19:33
+updated: 2026-11-11 21:17:56
 tags:
   - 用户列表
   - 技术
@@ -15,7 +15,11 @@ category: 知识
 这篇文章比较适合程序员、技术爱好者阅读，如果您没学过编程也可以按照本文的方法尝试。若您遇到任何问题，可以让梦春酱教您一步步操作。
 :::
 
-## 准备工作
+:::info 许可协议
+本文中的**代码部分**采用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/wuziqian211/Miorika/blob/main/LICENSE-CODE">**MIT**</a> 许可协议，**其他文章内容**仍采用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/wuziqian211/Miorika/blob/main/LICENSE-CONTENT">**CC BY 4.0**</a> 许可协议。
+:::
+
+## 🛠️ 准备工作
 
 *[LTS]: 长期维护版
 
@@ -35,6 +39,8 @@ category: 知识
 const headers = { Cookie: 'SESSDATA=1a2b3c4d%2C1789012345%2C5e6f7*ef; bili_jct=0123456789abcdef0123456789abcdef', Origin: 'https://www.bilibili.com', Referer: 'https://www.bilibili.com/', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36' }; // 注意：此 Cookie 仅作为示例展示，请修改成自己的 Cookie
 ```
 
+[+代码]
+
 :::caution 特别注意
 **请不要把您刚刚复制的 “SESSDATA”“bili_jct” 中任何一个 Cookie 的值告诉任何人！它们的值是您的账号的登录信息，与账号、密码的作用相似，别人可能会利用这些值来登录您的账号。**
 :::
@@ -43,7 +49,7 @@ const headers = { Cookie: 'SESSDATA=1a2b3c4d%2C1789012345%2C5e6f7*ef; bili_jct=0
 目前，B 站的 Cookie 是定期更新的，所以建议您获取完 Cookie 后暂时不要访问 B 站的网页，防止原来的 Cookie 因更新而失效。待您完成所有步骤后，就可以访问 B 站的网页了。
 :::
 
-## 第一步 获取所有粉丝的列表
+## 📃 第一步 获取所有粉丝的列表
 
 *[API]: 应用程序接口
 
@@ -131,6 +137,8 @@ B 站官方给我们提供的==获取指定用户的粉丝列表==的 API 是 <a
 console.log((await (await fetch('https://api.bilibili.com/x/relation/fans?vmid=425503913&ps=50&pn=1', { headers })).json()).data.list); // 注意：请将 “vmid=” 后面的数字修改成自己的 UID
 ```
 
+[+代码]
+
 *[数组]: array
 *[对象]: object
 
@@ -144,9 +152,11 @@ for (let i = 1; i <= 20; i++) { // 获取前 20 页粉丝的信息，每页 50 �
 }
 ```
 
+[+代码]
+
 这样，“followers” 变量就存储了您的粉丝列表。
 
-## 第二步 获取所有粉丝的详细信息、粉丝数（可选）
+## ℹ️ 第二步 获取所有粉丝的详细信息、粉丝数（可选）
 
 目前 “followers” 变量虽然存储了所有粉丝的信息，但是这个信息不够详细，比如不包括等级、头像框信息等，我们要想办法获取更详细的粉丝信息。
 
@@ -277,9 +287,11 @@ for await (const sjson of sjsonList) {
 }
 ```
 
+[+代码]
+
 这样，“followers” 变量就存储了所有粉丝的信息与粉丝数。
 
-## 第三步 生成图片
+## 🖼️ 第三步 生成图片
 
 *[HTML]: 超文本标记语言
 
@@ -362,12 +374,14 @@ ${html}`;
 fs.writeFileSync('followers.html', content); // 注意：请将 “followers.html” 修改成生成的 HTML 文件的名称
 ```
 
+[+代码]
+
 再将网页转换成图片：  
 我们可以在浏览器中打开生成的文件，然后打开开发者工具（一般按 F12 键即可），点击右上角的三个点展开菜单，选择 “运行命令”（也可直接按下 <kbd>Ctrl</kbd>＋<kbd>Shift</kbd>＋<kbd>P</kbd>），输入 “屏幕截图”，再选择 “截取完整尺寸的屏幕截图”，并选择保存图片的位置，就可以保存一张包括所有粉丝的图片了。
 
 ![生成图片](./take-full-size-screenshot.webp)
 
-## 总结
+## 🎯 总结
 
 生成自己的所有粉丝列表的图片看似很难，实际上只有三个步骤，每个步骤不需要您进行太多操作。  
 下面的代码就是实现上述功能的完整代码，您可以复制代码并适当修改一下代码，运行脚本，就可以生成您自己的粉丝列表的图片了。
@@ -482,6 +496,10 @@ ${html}`;
 fs.writeFileSync('followers.html', content); // 注意：请将 “followers.html” 修改成生成的 HTML 文件的名称
 ```
 
+[+代码]
+
 下面的图片就是梦春酱在 2022 年 10 月 15 日生成的粉丝列表图片。
 
 ![梦春酱在 2022 年 10 月 15 日生成的所有粉丝列表的图片](./fans-list.png)
+
+[+代码]: 上述代码采用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/wuziqian211/Miorika/blob/main/LICENSE-CODE">MIT</a> 许可协议

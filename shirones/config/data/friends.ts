@@ -145,14 +145,6 @@ const linksData: FriendItem[] = [
     tags: ['网站', '技术'],
   },
   {
-    id: -12,
-    title: '我汐了_233 的小站',
-    imgurl: 'https://api.yumeharu.top/api/getuser?mid=474683920&type=avatar_redirect',
-    desc: 'B 站用户 “我汐了_233” 的个人网站',
-    siteurl: 'https://woxile.rth3.xyz/',
-    tags: ['网站', '技术'],
-  },
-  {
     id: -13,
     title: 'KittySite',
     imgurl: '/assets/images/friendship-links/blog-konpaku-cn.webp',
@@ -272,6 +264,14 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friendship-links/wuziqian211-icoc-vc.png',
     desc: '梦春酱的旧网站，已不再更新',
     siteurl: 'https://wuziqian211.icoc.vc/',
+    tags: ['网站', '技术', '失效/注销'],
+  },
+  {
+    id: -1008,
+    title: '我汐了_233 的小站',
+    imgurl: '/assets/images/friendship-links/woxile-rth3-xyz.jpg',
+    desc: 'B 站用户 “我汐了_233” 的个人网站',
+    siteurl: 'https://woxile.rth3.xyz/',
     tags: ['网站', '技术', '失效/注销'],
   },
 ];
