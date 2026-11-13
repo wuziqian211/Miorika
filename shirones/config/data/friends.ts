@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+
 /**
  * 友情链接数据配置（结构与 Mizuki 同款，便于互相迁移）。
  * 用于管理友情链接页面的数据：src/pages/friends.astro → organisms/FriendSection。
@@ -14,21 +16,23 @@ export interface FriendItem {
   tags: string[];
 }
 
-export interface APIResponse {
+interface APIResponse<T> {
   code: number;
   message: string;
-  data: {
-    /** 正常用户 */
-    n: UserItem[];
-    /** 已注销用户 */
-    d?: UserItem[];
-    /** 更新时间戳（毫秒级） */
-    m: number;
-  };
+  data: T;
   extInfo: Record<string, unknown>;
 }
 
-export interface UserItem {
+interface FriendsData {
+  /** 正常用户 */
+  n: UserItem[];
+  /** 已注销用户 */
+  d?: UserItem[];
+  /** 更新时间戳（毫秒级） */
+  m: number;
+}
+
+interface UserItem {
   /** 头像 */
   a: string;
   /** 头像图标 */
@@ -277,13 +281,25 @@ const unavailableLinksData: FriendItem[] = [
 ];
 
 const usersData: FriendItem[] = [],
-      deletedUsersData: FriendItem[] = [],
-      fjson = <APIResponse> await (await fetch('https://api.yumeharu.top/api/modules?id=friends&version=3&type=json')).json();
-if (fjson.code === 0) {
-  usersData.push(...fjson.data.n.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['B 站朋友'] })));
-  if (fjson.data.d?.length) {
-    deletedUsersData.push(...fjson.data.d.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['B 站朋友', '失效/注销'] })));
+      deletedUsersData: FriendItem[] = [];
+let fdata: FriendsData;
+
+try {
+  const fjson = <APIResponse<FriendsData>> await (await fetch('https://api.yumeharu.top/api/modules?id=friends&version=3&type=json')).json();
+  if (fjson.code === 0) {
+    fdata = fjson.data;
+    fs.writeFileSync('./src/data/custom/friendsList.json', JSON.stringify(fdata, null, 2));
+  } else {
+    throw new TypeError(`Response code: ${fjson.code}`);
   }
+} catch (e) {
+  console.error(e);
+  fdata = JSON.parse(fs.readFileSync('./src/data/custom/friendsList.json', { encoding: 'utf8' }));
+}
+
+usersData.push(...fdata.n.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['B 站朋友'] })));
+if (fdata.d?.length) {
+  deletedUsersData.push(...fdata.d.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['B 站朋友', '失效/注销'] })));
 }
 
 // 友情链接数据

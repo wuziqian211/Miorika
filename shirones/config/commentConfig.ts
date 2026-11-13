@@ -1,6 +1,6 @@
 import type { CommentConfig, GiscusConfig, TwikooConfig, WalineConfig } from '@/types/commentConfig';
 import { withUserConfig } from '@/utils/config-overlay.ts';
-import emojiList from './data/emoteList.json';
+import emojiList from '../../src/data/custom/emoteList.json';
 
 /**
  * 评论系统配置单一真源。
@@ -81,9 +81,9 @@ export const commentConfig: CommentConfig = withUserConfig('comment', {
     /** 服务端地址（必填）；留空时不渲染评论区 */
     serverURL: 'https://waline.yumeharu.top',
     /** 完整 UMD 客户端，按需加载；升级时与下面的 CSS 保持同版本 */
-    scriptUrl: 'https://unpkg.com/@waline/client@3/dist/waline.umd.js',
+    scriptUrl: '/assets/js/waline-client.js',
     /** 客户端样式；同样只在评论区进入视口后加载 */
-    styleUrl: 'https://unpkg.com/@waline/client@3/dist/waline.css',
+    styleUrl: '/assets/css/waline-client.css',
     /** auto 跟随文章/站点语言；也可指定 Waline 语言码，如 zh-CN、en、jp */
     lang: 'auto',
     /** 可选文案覆盖；省略的字段使用 Waline 当前语言默认值 */

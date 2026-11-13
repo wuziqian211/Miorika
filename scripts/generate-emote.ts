@@ -56,4 +56,4 @@ for (const p of ejson.data.packages) {
   });
 }
 
-fs.writeFile('./shirones/config/data/emoteList.json', JSON.stringify(emojiList, null, 2));
+fs.writeFile('./src/data/custom/emoteList.json', JSON.stringify(emojiList, null, 2));

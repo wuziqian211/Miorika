@@ -12,19 +12,22 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-emote": "node ./scripts/generate-emote.ts"
+    "emote:generate": "node ./scripts/generate-emote.ts",
+    "build:waline": "esbuild src/scripts/waline-client.ts --bundle --format=iife --global-name=Waline --minify --outdir=public/assets/ --entry-names=[ext]/[name]"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
-    "@astrojs/svelte": "^9.1.2",
-    "@astrojs/vercel": "^11.0.20",
+    "@astrojs/svelte": "^9.1.5",
+    "@astrojs/vercel": "^11.0.21",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-regular": "^1.2.4",
     "@iconify-json/fa6-solid": "^1.2.4",
-    "@iconify-json/material-symbols": "^1.2.98",
-    "@iconify-json/simple-icons": "^1.2.101",
-    "astro": "^7.4.8",
+    "@iconify-json/material-symbols": "^1.2.99",
+    "@iconify-json/simple-icons": "^1.2.102",
+    "@waline/client": "^3.16.2",
+    "astro": "^7.4.11",
     "astro-icon": "^1.2.0",
+    "live2d-widgets": "^1.0.1",
     "sharp": "^0.35.5",
     "shirones": "^0.1.6",
     "svelte": "^5.57.3",
@@ -34,9 +37,10 @@
     "@biomejs/biome": "2.5.15",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
+    "esbuild": "^0.28.2",
     "eslint": "^10.14.0",
     "eslint-plugin-astro": "^3.2.1",
     "globals": "^17.14.0",
-    "typescript-eslint": "^8.72.1"
+    "typescript-eslint": "^8.72.2"
   }
 }

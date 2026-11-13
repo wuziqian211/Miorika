@@ -7,7 +7,7 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    files: ['public/**/*.{js,ts}'],
+    files: ['public/**/*.{js,ts}', 'src/**/*.{js,mjs,ts,mts,astro}'],
     languageOptions: { globals: globals.browser, sourceType: 'script' },
   },
   {
@@ -15,7 +15,6 @@ export default defineConfig([
       '*.{js,mjs,ts,mts}',
       'scripts/**/*.{js,mjs,ts,mts}',
       'shirones/**/*.{js,mjs,ts,mts,astro}',
-      'src/**/*.{js,mjs,ts,mts,astro}',
     ],
     languageOptions: { globals: globals.nodeBuiltin, sourceType: 'module' },
   },

@@ -17,6 +17,15 @@ export default defineConfig({
     }),
     icon(),
     {
+      name: 'site-custom',
+      hooks: {
+        'astro:config:setup': ({ injectScript }) => {
+          injectScript('page-ssr', 'import "/src/styles/custom.css";');
+          injectScript('page', 'import "/src/scripts/live2d.ts";');
+        },
+      },
+    },
+    {
       name: 'vercel-sitemap-output',
       hooks: {
         'astro:config:setup': ({ command, config, updateConfig }) => {
@@ -29,7 +38,7 @@ export default defineConfig({
             integrations: [{
               name: 'vercel-sitemap-copy',
               hooks: {
-                'astro:build:done': async ({ dir }) => {
+                'astro:build:done': async ({ dir }: { dir: URL }) => {
                   const files = await readdir(dir);
                   await Promise.all(files
                     .filter(file => /^sitemap.*\.xml$/.test(file))
@@ -52,5 +61,12 @@ export default defineConfig({
       },
     },
   ],
+  vite: {
+    optimizeDeps: {
+      // Keep the theme's icon wrapper in Vite's normal transform pipeline so
+      // client hydration also resolves the project-generated icon collections.
+      exclude: ['@iconify/svelte', '@components/atoms/display/Icon.svelte'],
+    },
+  },
   server: { host: true, port: 20211 },
 });
