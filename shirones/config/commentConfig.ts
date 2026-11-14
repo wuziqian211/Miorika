@@ -89,7 +89,19 @@ export const commentConfig: CommentConfig = withUserConfig('comment', {
     /** 可选文案覆盖；省略的字段使用 Waline 当前语言默认值 */
     locale: {
       /** 评论输入框提示；空字符串不显示提示 */
-      placeholder: 'Share your thoughts...',
+      placeholder: '发条评论吧 (=・ω・=)',
+      link: '网址 / B 站 UID',
+      submit: '发布',
+      like: '点赞',
+      cancelLike: '取消点赞',
+      admin: '可爱的管理员',
+      reaction0: '点赞',
+      reaction1: 'doge',
+      reaction2: '疑问',
+      reaction3: '微笑',
+      reaction4: '难过',
+      reaction5: '调侃',
+      reaction6: '思考',
     },
     /** false 关闭表情，true 使用默认表情；也可混合填写预设 URL 与自定义表情对象 */
     emoji: emojiList,
@@ -106,11 +118,11 @@ export const commentConfig: CommentConfig = withUserConfig('comment', {
     /** 每页条数 */
     pageSize: 20,
     /** 图片上传：true 时 Waline 将图片编码为 Base64，false 关闭；只接受 true / false，不支持自定义函数 */
-    imageUploader: true,
+    imageUploader: true, // 已在 src/scripts/waline-client.ts 修改
     /** 代码高亮：true 使用 Waline 内置高亮器，false 关闭；只接受 true / false */
     highlighter: true,
     /** TeX：true 在预览中提示不支持 TeX，false 不解析 TeX；只接受 true / false */
-    texRenderer: false,
+    texRenderer: true,
     /** 是否隐藏页脚版权信息 */
     noCopyright: false,
     /** 是否隐藏 RSS 订阅链接 */

@@ -1,9 +1,24 @@
 img.emote {
   display: inline;
-  height: 1.25em;
+  height: 2.5em;
   margin: 0;
+  width: 2.5em;
+}
+img.emote[src^='/assets/images/emote/小黄脸/'], img.emote[src^='/assets/images/emote/tv_小电视/'], img.emote[src^='/assets/images/emote/喵/'] {
+  height: 1.25em;
   width: 1.25em;
 }
+
+.wl-content .wl-emoji:not(.unexistent) {
+  height: 3em;
+  vertical-align: sub;
+  width: 3em;
+}
+.wl-content .wl-emoji[src^='/assets/images/emote/小黄脸/']:not(.unexistent), .wl-content .wl-emoji[src^='/assets/images/emote/tv_小电视/']:not(.unexistent), .wl-content .wl-emoji[src^='/assets/images/emote/喵/']:not(.unexistent) {
+  height: 1.5em;
+  width: 1.5em;
+}
+
 #waifu-toggle {
   z-index: 99998;
 }
