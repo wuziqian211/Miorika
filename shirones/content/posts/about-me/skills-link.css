@@ -1,0 +1,22 @@
+.custom-md .about-me-skills-link {
+  display: block;
+  min-height: 2.75rem;
+  margin-block: var(--m3e-space-6);
+  padding-block: var(--m3e-space-3);
+  border-radius: var(--shape-corner-m);
+}
+
+.custom-md .about-me-skills-link > p {
+  margin: 0;
+}
+
+.custom-md .about-me-skills-link img {
+  margin-block: 0;
+  /* Let the link receive clicks instead of the delegated image lightbox. */
+  pointer-events: none;
+}
+
+.custom-md .about-me-skills-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
