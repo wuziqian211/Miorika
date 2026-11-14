@@ -57,7 +57,7 @@ export const projectsData: ProjectItem[] = [
     cover: '/assets/images/screenshot-old.webp',
     coverAlt: '旧版「晨叶梦春的小屋」博客首页预览',
     repository: 'https://github.com/wuziqian211/website-src',
-    year: '2021',
+    year: '2021~2026',
   },
   {
     key: 'bili-auto-get-message',
@@ -70,7 +70,7 @@ export const projectsData: ProjectItem[] = [
     cover: '/assets/images/projects/bili-auto-get-message.png',
     coverAlt: 'bili-auto-get-message 项目预览',
     repository: 'https://gitee.com/wuziqian211/bili-auto-get-message',
-    year: '2020',
+    year: '2021~2022',
   },
   {
     key: 'bili-auto-task',
@@ -83,7 +83,7 @@ export const projectsData: ProjectItem[] = [
     cover: '/assets/images/projects/BiliAutoTask.png',
     coverAlt: 'BiliAutoTask 项目预览',
     repository: 'https://gitee.com/wuziqian211/BiliAutoTask',
-    year: '2020',
+    year: '2021~2022',
   },
   {
     key: 'bilibili-api-collect',
@@ -96,7 +96,7 @@ export const projectsData: ProjectItem[] = [
     cover: '/assets/images/projects/bilibili-API-collect.png',
     coverAlt: 'bilibili-API-collect 项目预览',
     repository: 'https://github.com/SocialSisterYi/bilibili-API-collect',
-    year: '2020',
+    year: '2020~2026',
   },
 ];
 

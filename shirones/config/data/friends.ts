@@ -95,7 +95,7 @@ const linksData: FriendItem[] = [
   {
     id: -5,
     title: '易姐的博客',
-    imgurl: '/assets/images/friendship-links/shakaianee-top.jpg',
+    imgurl: '/assets/images/friends/shakaianee-top.jpg',
     desc: '给岁月以文明，而不是给文明以岁月。',
     siteurl: 'https://shakaianee.top/',
     tags: ['网站', '技术'],
@@ -103,7 +103,7 @@ const linksData: FriendItem[] = [
   {
     id: -6,
     title: '松坂日记',
-    imgurl: '/assets/images/friendship-links/blog-mysqil-com.png',
+    imgurl: '/assets/images/friends/blog-mysqil-com.png',
     desc: '一个基于内容分享,创作与灵感结合折腾的笔记博客',
     siteurl: 'https://blog.mysqil.com/',
     tags: ['网站', '技术'],
@@ -111,7 +111,7 @@ const linksData: FriendItem[] = [
   {
     id: -7,
     title: "GoForceX's Blog",
-    imgurl: '/assets/images/friendship-links/goforcex-top.jpeg',
+    imgurl: '/assets/images/friends/goforcex-top.jpeg',
     desc: '摆烂的小站',
     siteurl: 'https://goforcex.top/',
     tags: ['网站', '技术'],
@@ -119,7 +119,7 @@ const linksData: FriendItem[] = [
   {
     id: -8,
     title: 'Microhard Demo',
-    imgurl: '/assets/images/friendship-links/microharddemo-github-io.svg',
+    imgurl: '/assets/images/friends/microharddemo-github-io.svg',
     desc: '逸一时，误一世，逸久逸久罢已龄！',
     siteurl: 'https://microharddemo.github.io/',
     tags: ['网站', '技术'],
@@ -127,7 +127,7 @@ const linksData: FriendItem[] = [
   {
     id: -9,
     title: 'SESSのB10GTE5T',
-    imgurl: '/assets/images/friendship-links/sess-moe.jpg',
+    imgurl: '/assets/images/friends/sess-moe.jpg',
     desc: 'Session 的个人博客, 这里有各种类型的有趣的文章内容, 网站使用纯 JavaScript 构建',
     siteurl: 'https://sess.moe/',
     tags: ['网站', '技术'],
@@ -143,7 +143,7 @@ const linksData: FriendItem[] = [
   {
     id: -11,
     title: 'Ra小小特的小站',
-    imgurl: '/assets/images/friendship-links/raxxt-top.png',
+    imgurl: '/assets/images/friends/raxxt-top.png',
     desc: 'B 站用户 “爱玩电脑的特兰克斯” 的个人网站',
     siteurl: 'https://raxxt.top/',
     tags: ['网站', '技术'],
@@ -151,7 +151,7 @@ const linksData: FriendItem[] = [
   {
     id: -13,
     title: 'KittySite',
-    imgurl: '/assets/images/friendship-links/blog-konpaku-cn.webp',
+    imgurl: '/assets/images/friends/blog-konpaku-cn.webp',
     desc: '魂恋白楼三尺剑，飞花影里斩春风',
     siteurl: 'https://blog.konpaku.cn/',
     tags: ['网站', '技术', '医学'],
@@ -167,7 +167,7 @@ const linksData: FriendItem[] = [
   {
     id: -15,
     title: '是鱼干~',
-    imgurl: '/assets/images/friendship-links/fish1000-top.png',
+    imgurl: '/assets/images/friends/fish1000-top.png',
     desc: '永远永远喜欢你！!',
     siteurl: 'https://fish1000.top/',
     tags: ['网站', '技术'],
@@ -183,7 +183,7 @@ const linksData: FriendItem[] = [
   {
     id: -17,
     title: '家乡印象⛽',
-    imgurl: '/assets/images/friendship-links/nxdaolin-dpdns-org.gif',
+    imgurl: '/assets/images/friends/nxdaolin-dpdns-org.gif',
     desc: '一个记录家乡故事的小站',
     siteurl: 'https://nxdaolin.dpdns.org/',
     tags: ['网站', '生活'],
@@ -191,7 +191,7 @@ const linksData: FriendItem[] = [
   {
     id: -18,
     title: 'TV768の个人网站',
-    imgurl: '/assets/images/friendship-links/tv768-xyz.jpg',
+    imgurl: '/assets/images/friends/tv768-xyz.jpg',
     desc: '精彩的768 让生活添色彩',
     siteurl: 'https://www.tv768.xyz/',
     tags: ['网站', '放送'],
@@ -199,7 +199,7 @@ const linksData: FriendItem[] = [
   {
     id: -19,
     title: '弹幕塚',
-    imgurl: '/assets/images/friendship-links/danmaku-site.png',
+    imgurl: '/assets/images/friends/danmaku-site.png',
     desc: '某野生的神弹幕存档站ヽ(✿ﾟ▽ﾟ)ノ',
     siteurl: 'https://danmaku.site/',
     tags: ['网站', '技术'],
@@ -217,7 +217,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1001,
     title: '365云栈',
-    imgurl: '/assets/images/friendship-links/blog-365sites-top.png',
+    imgurl: '/assets/images/friends/blog-365sites-top.png',
     desc: '初阅不明言外意，重温方觉字中情',
     siteurl: 'https://blog.365sites.top/',
     tags: ['网站', '技术', '失效/注销'],
@@ -225,7 +225,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1002,
     title: '朋友圈实验室',
-    imgurl: '/assets/images/friendship-links/aperturelaboratories-icoc-vc.png',
+    imgurl: '/assets/images/friends/aperturelaboratories-icoc-vc.png',
     desc: '一个古朴的化学实验室',
     siteurl: 'https://aperturelaboratories.icoc.vc/',
     tags: ['网站', '放送', '失效/注销'],
@@ -233,7 +233,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1003,
     title: '知心她们工作室',
-    imgurl: '/assets/images/friendship-links/shuxincm-jzfkw-net.png',
+    imgurl: '/assets/images/friends/shuxincm-jzfkw-net.png',
     desc: '知心她们，心情美好。',
     siteurl: 'https://shuxincm.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -241,7 +241,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1004,
     title: '值关大众放送工作室',
-    imgurl: '/assets/images/friendship-links/zhiguanmedia-jzfkw-net.png',
+    imgurl: '/assets/images/friends/zhiguanmedia-jzfkw-net.png',
     desc: '做有情怀的媒体',
     siteurl: 'https://zhiguanmedia.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -249,7 +249,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1005,
     title: '社凤迷工作室',
-    imgurl: '/assets/images/friendship-links/shefengmi-10-jzfkw-net.jpg',
+    imgurl: '/assets/images/friends/shefengmi-10-jzfkw-net.jpg',
     desc: '看着社会与法 听着凤凰传奇',
     siteurl: 'https://shefengmi-10.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -257,7 +257,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1006,
     title: '铭琛天宏互娱工作室',
-    imgurl: '/assets/images/friendship-links/mingchen2485-jzfkw-net.png',
+    imgurl: '/assets/images/friends/mingchen2485-jzfkw-net.png',
     desc: '我们不做视频，我们只是央视网的搬运工。',
     siteurl: 'https://mingchen2485.jzfkw.net/',
     tags: ['网站', '放送', '失效/注销'],
@@ -265,7 +265,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1007,
     title: 'wuziqian211 的网站（旧）',
-    imgurl: '/assets/images/friendship-links/wuziqian211-icoc-vc.png',
+    imgurl: '/assets/images/friends/wuziqian211-icoc-vc.png',
     desc: '梦春酱的旧网站，已不再更新',
     siteurl: 'https://wuziqian211.icoc.vc/',
     tags: ['网站', '技术', '失效/注销'],
@@ -273,7 +273,7 @@ const unavailableLinksData: FriendItem[] = [
   {
     id: -1008,
     title: '我汐了_233 的小站',
-    imgurl: '/assets/images/friendship-links/woxile-rth3-xyz.jpg',
+    imgurl: '/assets/images/friends/woxile-rth3-xyz.jpg',
     desc: 'B 站用户 “我汐了_233” 的个人网站',
     siteurl: 'https://woxile.rth3.xyz/',
     tags: ['网站', '技术', '失效/注销'],

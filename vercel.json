@@ -20,6 +20,7 @@
     { "source": "/friendship-links/", "destination": "/friends/" },
     { "source": "/images/face_compressed.png", "destination": "/assets/images/face.png" },
     { "source": "/images/face.png_compressed.webp", "destination": "/assets/images/face.png" },
+    { "source": "/images/friendship-links/(.*)", "destination": "/assets/images/friends/$1" },
     { "source": "/images/icon_compressed.png", "destination": "/assets/images/icon.png" },
     { "source": "/images/icon.png_compressed.webp", "destination": "/assets/images/icon.png" },
     { "source": "/images/screenshot.png", "destination": "/assets/images/screenshot.webp" },
