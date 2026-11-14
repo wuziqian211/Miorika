@@ -9,7 +9,12 @@ import markdownExternalLinks from './src/integrations/markdown-external-links';
 // `shirones/config/` so they stay typed and version-controlled with your
 // content. This file only wires the theme in.
 export default defineConfig({
-  adapter: vercel({ imageService: true, isr: true }),
+  adapter: vercel({
+    imageService: true,
+    isr: true,
+    // Respect the theme's /_image/ endpoint and trailing-slash policy in dev.
+    devImageService: 'astro/assets/services/sharp',
+  }),
   integrations: [
     shirones({
       // Override individual components by mirroring the theme's structure in
@@ -51,16 +56,6 @@ export default defineConfig({
               },
             }],
           });
-        },
-      },
-    },
-    {
-      name: 'vercel-image-endpoint-route',
-      hooks: {
-        'astro:config:setup': ({ command, updateConfig }) => {
-          if (command === 'dev') {
-            updateConfig({ trailingSlash: 'ignore' });
-          }
         },
       },
     },

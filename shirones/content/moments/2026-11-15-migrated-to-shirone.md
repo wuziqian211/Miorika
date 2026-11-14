@@ -7,7 +7,7 @@ tags:
   - Astro
   - Shirone
 images:
-  - src: /assets/images/screenshot.webp
+  - src: /assets/images/screenshot-light.webp
     alt: 换上 Shirone 主题的 Miorika 首页，樱花与动漫人物横幅下方是紫粉色的文章卡片、个人资料和站点统计。
 ---
 

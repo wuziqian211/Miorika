@@ -13,7 +13,7 @@ export const projectsData: ProjectItem[] = [
     phase: 'building',
     technologies: ['Astro', 'Shirone', 'Svelte', 'TypeScript', 'Tailwind CSS'],
     icon: 'material-symbols:language-outline-rounded',
-    cover: '/assets/images/screenshot.webp',
+    cover: '/assets/images/screenshot-light.webp',
     coverAlt: 'Miorika 博客首页预览',
     featured: true,
     website: 'https://www.yumeharu.top/',

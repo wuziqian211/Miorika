@@ -5,7 +5,7 @@ publishedAt: 2021-09-16T23:30:17+08:00
 updated: 2026-11-15
 updatedAt: 2026-11-15T00:35:00+08:00
 description: 这里是一篇关于 Blog 的介绍哟~
-image: /assets/images/screenshot.webp
+image: /assets/images/screenshot-light.webp
 tags:
   - 网站
   - Blog
@@ -50,7 +50,24 @@ import { Icon } from 'astro-icon/components';
 ::github{repo="LyraVoid/Shirone"}
 ::github{repo="wuziqian211/Miorika"}
 
-![本网站截图](/assets/images/screenshot.webp)
+<img
+  class="dark:hidden"
+  src="/assets/images/screenshot-light.webp"
+  alt="本网站截图（浅色模式）"
+  width="3120"
+  height="1810"
+  loading="lazy"
+  decoding="async"
+/>
+<img
+  class="hidden dark:block"
+  src="/assets/images/screenshot-dark.webp"
+  alt="本网站截图（深色模式）"
+  width="3120"
+  height="1810"
+  loading="lazy"
+  decoding="async"
+/>
 
 ### 🔗 域名
 
