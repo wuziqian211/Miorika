@@ -89,7 +89,7 @@ export const skillsData: SkillItem[] = [
     name: 'GitHub',
     description: '管理代码仓库、Issue 与 Pull Request，参与项目协作和开源交流',
     icon: 'simple-icons:github',
-    category: 'tooling',
+    category: 'deployment',
     level: 'advanced',
   },
   // Intermediate

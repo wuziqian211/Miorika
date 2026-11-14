@@ -1,7 +1,9 @@
 ---
 title: 如何恢复 B 站网页版评论区翻页功能
-published: 2022-02-04 23:34:15
-updated: 2026-11-11 21:17:56
+published: 2022-02-04
+publishedAt: 2022-02-04T23:34:15+08:00
+updated: 2026-11-11
+updatedAt: 2026-11-11T21:17:56+08:00
 description: 在网址中添加几个字符，就可以恢复 B 站的评论区翻页功能了
 tags:
   - 评论
@@ -22,7 +24,7 @@ category: 知识
 
 在浏览器中打开您要恢复评论区翻页功能的页面，然后在浏览器的地址栏中的网址后加上 “#reply==m==”（==m== 可以是正整数，但是==不能超过 9223372036854775807，即 $2^{63}-1$=={.tip}），按 <kbd>Enter</kbd> 键访问（如果按 <kbd>Enter</kbd> 键访问后，浏览器没有自动刷新，请手动刷新），即可恢复评论区的翻页功能。
 
-例：假如您要把 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://t.bilibili.com/427081609364495836">https://t.bilibili.com/427081609364495836</a> 的评论区恢复翻页功能，就要在这个网址后加上 “==#reply1==” 等类似文字，即 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://t.bilibili.com/427081609364495836#reply1">https://t.bilibili.com/427081609364495836#reply1</a>，然后刷新页面即可恢复翻页功能。
+例：假如您要把 <https://t.bilibili.com/427081609364495836> 的评论区恢复翻页功能，就要在这个网址后加上 “==#reply1==” 等类似文字，即 <https://t.bilibili.com/427081609364495836#reply1>，然后刷新页面即可恢复翻页功能。
 
 按照上面的方法恢复后，一般情况下该页面的评论区会自动按时间排序，并会显示当前页面为第 1 页；而且无论是按热度排序还是按时间排序，评论区下方都会显示翻页按钮。
 

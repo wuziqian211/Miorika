@@ -3,6 +3,7 @@ import vercel from '@astrojs/vercel';
 import { defineConfig } from 'astro/config';
 import shirones from 'shirones';
 import icon from 'astro-icon';
+import markdownExternalLinks from './src/integrations/markdown-external-links';
 
 // Site-level settings (site URL, base, title, theme colour, fonts, …) live in
 // `shirones/config/` so they stay typed and version-controlled with your
@@ -15,6 +16,7 @@ export default defineConfig({
       // `src/components/`, or point at them explicitly:
       // components: { 'atoms/blog/PostCard': './src/components/PostCard.astro' },
     }),
+    markdownExternalLinks(),
     icon(),
     {
       name: 'site-custom',

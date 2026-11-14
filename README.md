@@ -24,6 +24,23 @@ pnpm preview   # preview the production build locally
 | `src/layouts/` | …same for layouts |
 | `public/` | static assets (favicons, banners, images) |
 
+## Writing links
+
+Use standard Markdown links in `.md` and `.mdx` posts and spec pages:
+
+```md
+[Link text](https://example.com/)
+[**Bold link text**](https://example.com/)
+```
+
+The `site-markdown-external-links` integration runs after Shirones and preserves
+the theme's Markdown plugins. External HTTP(S) links receive `target="_blank"`
+and `rel="noopener external nofollow noreferrer"` during compilation. Same-origin
+URLs, relative paths, anchors and email links keep their normal behavior.
+Existing `rel` values and explicit targets such as `_self` are preserved.
+Custom JSX links in MDX (for example, links containing an icon component) keep
+their explicit attributes.
+
 ## Updating the theme
 
 ```bash

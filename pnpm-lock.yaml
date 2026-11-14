@@ -172,6 +172,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.12
         version: 0.9.12(prettier@3.10.1)(typescript@6.0.3)
+      '@astrojs/markdown-remark':
+        specifier: 7.3.5
+        version: 7.3.5(supports-color@7.2.0)
       '@astrojs/svelte':
         specifier: ^9.1.5
         version: 9.1.5(@types/node@26.6.6)(astro@7.4.11(@astrojs/markdown-remark@7.3.5(supports-color@7.2.0))(@types/node@26.6.6)(@vercel/functions@3.11.1)(esbuild@0.28.2)(jiti@2.7.0)(stylus@0.64.0(supports-color@7.2.0))(terser@5.51.2)(yaml@2.9.1))(esbuild@0.28.2)(jiti@2.7.0)(stylus@0.64.0(supports-color@7.2.0))(svelte@5.57.3(@typescript-eslint/types@8.72.2))(terser@5.51.2)(typescript@6.0.3)(yaml@2.9.1)
@@ -205,6 +208,9 @@ importers:
       live2d-widgets:
         specifier: ^1.0.1
         version: 1.0.1
+      rehype-external-links:
+        specifier: ^3.0.0
+        version: 3.0.0
       sharp:
         specifier: ^0.35.5
         version: 0.35.5(@types/node@26.6.6)
@@ -3982,6 +3988,10 @@ packages:
   iron-webcrypto@1.2.1:
     resolution: {integrity: sha512-feOM6FaSr6rEABp/eDfVseKyTMDt+KGpeB35SkVn9Tyn0CqvVsY3EwI0v5i8nMHyJnzCIQf7nsy3p41TPkJZhg==}
 
+  is-absolute-url@4.0.1:
+    resolution: {integrity: sha512-/51/TKE88Lmm7Gc4/8btclNXWS+g50wXhYJq8HWIBAGUBnoAdRu1aXeh364t/O7wXDAcTJDP8PNuNKWUDWie+A==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
   is-alphabetical@2.0.1:
     resolution: {integrity: sha512-FWyyY60MeTNyeSRpkM2Iry0G9hpr7/9kD40mD/cGQEuilcZYS4okz8SN2Q6rLCJ8gbCt6fN+rC+6tMGS99LaxQ==}
 
@@ -5302,6 +5312,9 @@ packages:
 
   rehype-expressive-code@0.44.3:
     resolution: {integrity: sha512-vaVuQPobFXvmtcHXQ5uqXZlzuuPnLyIuZcX/03sX1U/Qfj9fZrPYI9w66OSr/PUx6alzRYmreEwgYBbsVx8HsA==}
+
+  rehype-external-links@3.0.0:
+    resolution: {integrity: sha512-yp+e5N9V3C6bwBeAC4n796kc86M4gJCdlVhiMTxIrJG5UHDMh+PJANf9heqORJbt1nrCbDwIlAZKjANIaVBbvw==}
 
   rehype-katex@7.0.1:
     resolution: {integrity: sha512-OiM2wrZ/wuhKkigASodFoo8wimG3H12LWQaH8qSPVJn9apWKFSH3YOCtbKpBorTVw/eI7cuT21XBbvwEswbIOA==}
@@ -10730,6 +10743,8 @@ snapshots:
 
   iron-webcrypto@1.2.1: {}
 
+  is-absolute-url@4.0.1: {}
+
   is-alphabetical@2.0.1: {}
 
   is-alphanumerical@2.0.1:
@@ -12339,6 +12354,15 @@ snapshots:
   rehype-expressive-code@0.44.3:
     dependencies:
       expressive-code: 0.44.3
+
+  rehype-external-links@3.0.0:
+    dependencies:
+      '@types/hast': 3.0.5
+      '@ungap/structured-clone': 1.4.0
+      hast-util-is-element: 3.0.0
+      is-absolute-url: 4.0.1
+      space-separated-tokens: 2.0.2
+      unist-util-visit: 5.2.0
 
   rehype-katex@7.0.1:
     dependencies:

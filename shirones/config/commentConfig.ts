@@ -117,8 +117,8 @@ export const commentConfig: CommentConfig = withUserConfig('comment', {
     wordLimit: [1, 100000],
     /** 每页条数 */
     pageSize: 20,
-    /** 图片上传：true 时 Waline 将图片编码为 Base64，false 关闭；只接受 true / false，不支持自定义函数 */
-    imageUploader: true, // 已在 src/scripts/waline-client.ts 修改
+    /** 图片上传：true 使用站点上传器（小图与失败时可回退 Base64），false 关闭；JSON 配置只接受 true / false */
+    imageUploader: true,
     /** 代码高亮：true 使用 Waline 内置高亮器，false 关闭；只接受 true / false */
     highlighter: true,
     /** TeX：true 在预览中提示不支持 TeX，false 不解析 TeX；只接受 true / false */
