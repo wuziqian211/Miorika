@@ -3,6 +3,9 @@ published: 2026-08-16T17:24:36+08:00
 mood: material-symbols:sentiment-excited-rounded
 tags:
   - 日常
+  - 风景
+  - 武昌湾
+  - 江边
 images:
   - src: /assets/images/moments/2026-08-16-wuchang-bay.jpg
     alt: 武昌湾江畔盛开的粉白色花丛，远处是鹦鹉洲长江大桥与城市楼群，蓝天白云间阳光明亮。
