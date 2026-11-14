@@ -14,10 +14,11 @@ import { withUserConfig } from '@/utils/config-overlay.ts';
 export const projectsConfig: ProjectsConfig = withUserConfig('projects', {
   enable: true,
   title: '$t:projects',
-  description: '$t:projectsBanner',
+  description: '收录我搭建和参与维护的网站、实用工具，以及值得记录的开源项目，介绍它们的用途、功能与技术实现。',
   categories: [
-    { key: 'theme', label: 'Theme', icon: 'material-symbols:palette-outline-rounded' },
-    { key: 'android', label: 'Android', icon: 'material-symbols:android-rounded' },
+    { key: 'website', label: '网站与服务', icon: 'material-symbols:web-rounded' },
+    { key: 'tools', label: '实用工具', icon: 'material-symbols:build-outline-rounded' },
+    { key: 'bilibili', label: 'B 站生态', icon: 'simple-icons:bilibili' },
   ],
   // disabledKeys: [],
 });

@@ -29,3 +29,174 @@ index 42d091cb07715c07e021a10c158fa71a041fa04c..8729b114a1c2d91329a3b3c8533dcbd3
        if (requested !== normalisePath(ICON_COLLECTIONS_SPECIFIER) && requested !== normalisePath(withoutExtension(userCopy)) && requested !== normalisePath(withoutExtension(packageCopy))) {
          return null;
        }
+diff --git a/src/components/molecules/ProjectCard.svelte b/src/components/molecules/ProjectCard.svelte
+index 9fae0a694878355ce7893e54813b63b1b4e76161..a644f4fb8d7db74d3142a3f99c91e6ca98383646 100644
+--- a/src/components/molecules/ProjectCard.svelte
++++ b/src/components/molecules/ProjectCard.svelte
+@@ -9,7 +9,8 @@
+  *   加载前显示主题色渐变占位；封面可点（website）时整图外链；
+  * - 无封面：回退为精致图标瓷砖头（图标 + 标题/阶段并排），不保留空图槽；
+  * - 阶段为 tonal pill：语义色经 inline --project-phase-color 注入
+- *   （shipped → tertiary / building → primary / exploring → secondary，
++ *   （shipped → tertiary / building → primary / exploring → secondary /
++ *   archived → on-surface-variant，
+  *   与 ANIME_STATUS_META 的角色映射同源），避免动态 class 触发
+  *   Svelte unused-CSS 剥离（见 rules/pitfalls.md 1.6）；
+  * - 技术栈微胶囊（micro-badges）：统一 tonal pill 风格；
+@@ -45,6 +46,11 @@ const phaseMeta: Record<
+ 		icon: "material-symbols:explore-outline-rounded",
+ 		color: "var(--secondary)",
+ 	},
++	archived: {
++		key: I18nKey.projectPhaseArchived,
++		icon: "material-symbols:archive-outline-rounded",
++		color: "var(--on-surface-variant)",
++	},
+ };
+ 
+ const phase = $derived(phaseMeta[project.phase]);
+diff --git a/src/i18n/i18nKey.ts b/src/i18n/i18nKey.ts
+index c7ce6b635127376b50cb556a1dce615808187928..aafd924822be6f5e61340237e49c01f93bf46c1d 100644
+--- a/src/i18n/i18nKey.ts
++++ b/src/i18n/i18nKey.ts
+@@ -67,6 +67,7 @@ enum I18nKey {
+ 	projectPhaseShipped = "projectPhaseShipped",
+ 	projectPhaseBuilding = "projectPhaseBuilding",
+ 	projectPhaseExploring = "projectPhaseExploring",
++	projectPhaseArchived = "projectPhaseArchived",
+ 	projectVisit = "projectVisit",
+ 	projectSource = "projectSource",
+ 	projectTechnologies = "projectTechnologies",
+diff --git a/src/i18n/languages/en.ts b/src/i18n/languages/en.ts
+index 86d29296332aa1b468c511af782e718531cdfdfa..6f771b588ae07c9fec64229e430f7cb29d4f2ad0 100644
+--- a/src/i18n/languages/en.ts
++++ b/src/i18n/languages/en.ts
+@@ -72,6 +72,7 @@ export const en: Translation = {
+ 	[Key.projectPhaseShipped]: "Shipped",
+ 	[Key.projectPhaseBuilding]: "Building",
+ 	[Key.projectPhaseExploring]: "Exploring",
++	[Key.projectPhaseArchived]: "Archived",
+ 	[Key.projectVisit]: "Visit project",
+ 	[Key.projectSource]: "View source",
+ 	[Key.projectTechnologies]: "Technologies",
+diff --git a/src/i18n/languages/es.ts b/src/i18n/languages/es.ts
+index c62a2c9b944a3448502e0a7a9c6c72a2e9ca4326..20670f4a2b8e9657223b3eb84b77a239436a79e5 100644
+--- a/src/i18n/languages/es.ts
++++ b/src/i18n/languages/es.ts
+@@ -71,6 +71,7 @@ export const es: Translation = {
+ 	[Key.projectPhaseShipped]: "Publicado",
+ 	[Key.projectPhaseBuilding]: "En desarrollo",
+ 	[Key.projectPhaseExploring]: "En exploración",
++	[Key.projectPhaseArchived]: "Archivado",
+ 	[Key.projectVisit]: "Visitar proyecto",
+ 	[Key.projectSource]: "Ver código",
+ 	[Key.projectTechnologies]: "Tecnologías",
+diff --git a/src/i18n/languages/id.ts b/src/i18n/languages/id.ts
+index b69aa9de75634c79b82b1d839ee4689ae0b00103..41adaa216068c38d84b0b1d47304d4c24db16f67 100644
+--- a/src/i18n/languages/id.ts
++++ b/src/i18n/languages/id.ts
+@@ -72,6 +72,7 @@ export const id: Translation = {
+ 	[Key.projectPhaseShipped]: "Dirilis",
+ 	[Key.projectPhaseBuilding]: "Sedang dibuat",
+ 	[Key.projectPhaseExploring]: "Sedang dieksplorasi",
++	[Key.projectPhaseArchived]: "Diarsipkan",
+ 	[Key.projectVisit]: "Kunjungi proyek",
+ 	[Key.projectSource]: "Lihat sumber",
+ 	[Key.projectTechnologies]: "Teknologi",
+diff --git a/src/i18n/languages/ja.ts b/src/i18n/languages/ja.ts
+index a03c36cf67f4ef482bb1479c0b3bf54142dcaca0..9daf7169a5fd6ac1f2134c63c513e326a3f1d305 100644
+--- a/src/i18n/languages/ja.ts
++++ b/src/i18n/languages/ja.ts
+@@ -71,6 +71,7 @@ export const ja: Translation = {
+ 	[Key.projectPhaseShipped]: "リリース済み",
+ 	[Key.projectPhaseBuilding]: "開発中",
+ 	[Key.projectPhaseExploring]: "検討中",
++	[Key.projectPhaseArchived]: "アーカイブ済み",
+ 	[Key.projectVisit]: "プロジェクトを見る",
+ 	[Key.projectSource]: "ソースを見る",
+ 	[Key.projectTechnologies]: "使用技術",
+diff --git a/src/i18n/languages/ko.ts b/src/i18n/languages/ko.ts
+index e3fd27e8423a9af5970f8ec16d69f47f5af763e3..f70971149da8c4c4d41e3464fd78b0f22166563b 100644
+--- a/src/i18n/languages/ko.ts
++++ b/src/i18n/languages/ko.ts
+@@ -70,6 +70,7 @@ export const ko: Translation = {
+ 	[Key.projectPhaseShipped]: "출시됨",
+ 	[Key.projectPhaseBuilding]: "개발 중",
+ 	[Key.projectPhaseExploring]: "탐색 중",
++	[Key.projectPhaseArchived]: "보관됨",
+ 	[Key.projectVisit]: "프로젝트 방문",
+ 	[Key.projectSource]: "소스 보기",
+ 	[Key.projectTechnologies]: "기술",
+diff --git a/src/i18n/languages/th.ts b/src/i18n/languages/th.ts
+index 972c79ce597fc0a651a5cf683768a6904f102bca..7179d285d20ea3831eb3f6cc73d1e683bf44b59a 100644
+--- a/src/i18n/languages/th.ts
++++ b/src/i18n/languages/th.ts
+@@ -66,6 +66,7 @@ export const th: Translation = {
+ 	[Key.projectPhaseShipped]: "เผยแพร่แล้ว",
+ 	[Key.projectPhaseBuilding]: "กำลังพัฒนา",
+ 	[Key.projectPhaseExploring]: "กำลังสำรวจ",
++	[Key.projectPhaseArchived]: "เก็บถาวรแล้ว",
+ 	[Key.projectVisit]: "เยี่ยมชมโปรเจกต์",
+ 	[Key.projectSource]: "ดูซอร์สโค้ด",
+ 	[Key.projectTechnologies]: "เทคโนโลยี",
+diff --git a/src/i18n/languages/tr.ts b/src/i18n/languages/tr.ts
+index 261ed262998bef149e14486a5c2cc95f46a2ef36..c0c9f0f285e583e5121c0d3c9d3c520471169b27 100644
+--- a/src/i18n/languages/tr.ts
++++ b/src/i18n/languages/tr.ts
+@@ -71,6 +71,7 @@ export const tr: Translation = {
+ 	[Key.projectPhaseShipped]: "Yayında",
+ 	[Key.projectPhaseBuilding]: "Geliştiriliyor",
+ 	[Key.projectPhaseExploring]: "Keşfediliyor",
++	[Key.projectPhaseArchived]: "Arşivlendi",
+ 	[Key.projectVisit]: "Projeyi ziyaret et",
+ 	[Key.projectSource]: "Kaynak kodu görüntüle",
+ 	[Key.projectTechnologies]: "Teknolojiler",
+diff --git a/src/i18n/languages/vi.ts b/src/i18n/languages/vi.ts
+index 2d7d9316cacb40d5775ef5ba5b3f74aec32f4e9b..6a37898a62db5e9f1fb2e42cf2ff152124389eda 100644
+--- a/src/i18n/languages/vi.ts
++++ b/src/i18n/languages/vi.ts
+@@ -72,6 +72,7 @@ export const vi: Translation = {
+ 	[Key.projectPhaseShipped]: "Đã phát hành",
+ 	[Key.projectPhaseBuilding]: "Đang xây dựng",
+ 	[Key.projectPhaseExploring]: "Đang khám phá",
++	[Key.projectPhaseArchived]: "Đã lưu trữ",
+ 	[Key.projectVisit]: "Truy cập dự án",
+ 	[Key.projectSource]: "Xem mã nguồn",
+ 	[Key.projectTechnologies]: "Công nghệ",
+diff --git a/src/i18n/languages/zh_CN.ts b/src/i18n/languages/zh_CN.ts
+index 32c1264bee300c665a2a1bc592412368a93e0809..3da110c0c490169694c6ed3f79299df46fd042ad 100644
+--- a/src/i18n/languages/zh_CN.ts
++++ b/src/i18n/languages/zh_CN.ts
+@@ -66,6 +66,7 @@ export const zh_CN: Translation = {
+ 	[Key.projectPhaseShipped]: "已发布",
+ 	[Key.projectPhaseBuilding]: "构建中",
+ 	[Key.projectPhaseExploring]: "探索中",
++	[Key.projectPhaseArchived]: "已归档",
+ 	[Key.projectVisit]: "访问项目",
+ 	[Key.projectSource]: "查看源码",
+ 	[Key.projectTechnologies]: "技术栈",
+diff --git a/src/i18n/languages/zh_TW.ts b/src/i18n/languages/zh_TW.ts
+index 8f10650ab11537d6f328a84597a86a88759690ad..e9c1add9ea7e37bd406cf6597a2efd8aaae25744 100644
+--- a/src/i18n/languages/zh_TW.ts
++++ b/src/i18n/languages/zh_TW.ts
+@@ -66,6 +66,7 @@ export const zh_TW: Translation = {
+ 	[Key.projectPhaseShipped]: "已發佈",
+ 	[Key.projectPhaseBuilding]: "建置中",
+ 	[Key.projectPhaseExploring]: "探索中",
++	[Key.projectPhaseArchived]: "已封存",
+ 	[Key.projectVisit]: "造訪專案",
+ 	[Key.projectSource]: "查看原始碼",
+ 	[Key.projectTechnologies]: "技術棧",
+diff --git a/src/types/projectsConfig.ts b/src/types/projectsConfig.ts
+index bffbd388c7625eba732b57f162f12b3a946bb344..1830ade1baf377eda8601256afa341196ca7db1b 100644
+--- a/src/types/projectsConfig.ts
++++ b/src/types/projectsConfig.ts
+@@ -1,7 +1,7 @@
+ import type { PageMeta } from "./pageMeta.ts";
+ 
+ /** 项目阶段：强调当前交付状态，不映射为百分比进度。 */
+-export type ProjectPhase = "shipped" | "building" | "exploring";
++export type ProjectPhase = "shipped" | "building" | "exploring" | "archived";
+ 
+ /** 项目页筛选分类。 */
+ export interface ProjectCategory {
