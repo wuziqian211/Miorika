@@ -2,8 +2,8 @@
 title: 如何生成 B 站粉丝列表图片
 published: 2022-12-10
 publishedAt: 2022-12-10T20:42:22+08:00
-updated: 2026-11-11
-updatedAt: 2026-11-11T21:17:56+08:00
+updated: 2026-11-15
+updatedAt: 2026-11-15T00:35:00+08:00
 tags:
   - 用户列表
   - 技术
@@ -34,7 +34,7 @@ category: 知识
 
 ![获取 Cookie](./get-cookie.webp)
 
-打开 Node.js，您应该会看到一个命令行窗口。在这个窗口里输入代码 `const headers = { Cookie: 'SESSDATA=` ==SESSDATA 的值== `; bili_jct=` ==bili_jct 的值=={.tip} `, Origin: 'https://www.bilibili.com', Referer: 'https://www.bilibili.com/', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36' };`，便于在后续操作中使用您账号的登录信息。  
+打开 Node.js，您应该会看到一个命令行窗口。在这个窗口里输入代码 `const headers = { Cookie: 'SESSDATA=` ==SESSDATA 的值== `; bili_jct=` ==bili_jct 的值=={.tip} `', Origin: 'https://www.bilibili.com', Referer: 'https://www.bilibili.com/', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36' };`，便于在后续操作中使用您账号的登录信息。  
 例：假如 ==SESSDATA 的值==为 `1a2b3c4d%2C1789012345%2C5e6f7*ef`，==bili_jct 的值=={.tip}为 `0123456789abcdef0123456789abcdef`，那么就输入代码：
 
 ```js

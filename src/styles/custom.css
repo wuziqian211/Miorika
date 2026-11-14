@@ -1,6 +1,13 @@
 /* Include Live2D's base styles in Astro's page stylesheet. */
 @import 'live2d-widgets/dist/waifu.css';
 
+:root {
+  --gitee-text-color: #d90013;
+}
+:root.dark {
+  --gitee-text-color: #ff7b86;
+}
+
 img.emote {
   display: inline;
   height: 2.5em;

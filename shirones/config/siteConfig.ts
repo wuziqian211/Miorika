@@ -74,7 +74,7 @@ export const siteConfig: SiteConfig = withUserConfig('site', {
     dim: {
       // 在图片上覆盖黑色遮罩以提高标题和顶部栏的对比度；opacity 范围为 0-1。
       enable: true,
-      opacity: 0.24,
+      opacity: 0.3,
     },
     homeText: {
       // 仅在首页 Banner 中显示，标题与副标题会上下居中排列。

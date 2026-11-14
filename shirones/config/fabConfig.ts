@@ -25,9 +25,9 @@ export const fabConfig: FabConfig = withUserConfig('fab', {
   size: 'regular',
   offset: { bottom: 'var(--m3e-space-8)', right: 'var(--m3e-space-6)' },
   items: [
-    { type: 'top', enable: true },
+    { type: 'top', enable: true, devices: ['mobile', 'tablet', 'desktop'] },
     { type: 'toc', enable: true, devices: ['mobile', 'tablet'], pages: ['post'], depth: 3, closeOnSelect: true },
-    { type: 'comment', enable: true, pages: ['post'] },
-    { type: 'home', enable: true, devices: ['mobile', 'tablet'], onlySubPages: true },
+    { type: 'comment', enable: true, devices: ['mobile', 'tablet', 'desktop'], pages: ['post'] },
+    { type: 'home', enable: false, devices: ['mobile', 'tablet'], onlySubPages: true },
   ],
 });

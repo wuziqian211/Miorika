@@ -15,6 +15,8 @@ export default defineConfig({
       // Override individual components by mirroring the theme's structure in
       // `src/components/`, or point at them explicitly:
       // components: { 'atoms/blog/PostCard': './src/components/PostCard.astro' },
+      components: { 'molecules/SearchBar': './src/components/molecules/SearchBar.svelte' },
+      excludeRoutes: ['/posts/[...slug]', '/robots.txt'], // 文章路径在 /archives/%year%/%monthnum%/%day%/
     }),
     markdownExternalLinks(),
     icon(),
@@ -67,7 +69,7 @@ export default defineConfig({
     optimizeDeps: {
       // Keep the theme's icon wrapper in Vite's normal transform pipeline so
       // client hydration also resolves the project-generated icon collections.
-      exclude: ['@iconify/svelte', '@components/atoms/display/Icon.svelte'],
+      exclude: ['@iconify/svelte', '@components/atoms/display/Icon.svelte', '@components/molecules/SearchBar.svelte'],
     },
   },
   server: { host: true, port: 20211 },
