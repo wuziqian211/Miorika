@@ -288,7 +288,7 @@ try {
   const fjson = <APIResponse<FriendsData>> await (await fetch('https://api.yumeharu.top/api/modules?id=friends&version=3&type=json')).json();
   if (fjson.code === 0) {
     fdata = fjson.data;
-    fs.writeFileSync('./src/data/custom/friendsList.json', JSON.stringify(fdata, null, 2));
+    // fs.writeFileSync('./src/data/custom/friendsList.json', JSON.stringify(fdata, null, 2));
   } else {
     throw new TypeError(`Response code: ${fjson.code}`);
   }

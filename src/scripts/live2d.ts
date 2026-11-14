@@ -1,4 +1,3 @@
-import 'live2d-widgets/dist/waifu.css';
 // The source entry needs SDK files omitted from npm; use the prebuilt bundle.
 import 'live2d-widgets/dist/waifu-tips.js';
 

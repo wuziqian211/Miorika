@@ -1,3 +1,6 @@
+/* Include Live2D's base styles in Astro's page stylesheet. */
+@import 'live2d-widgets/dist/waifu.css';
+
 img.emote {
   display: inline;
   height: 2.5em;
@@ -9,6 +12,7 @@ img.emote[src^='/assets/images/emote/小黄脸/'], img.emote[src^='/assets/image
   width: 1.25em;
 }
 
+/* :not(.unexistent) 可以在不使用 !important 的情况下提高选择器的优先级 */
 .wl-content .wl-emoji:not(.unexistent) {
   height: 3em;
   vertical-align: sub;
