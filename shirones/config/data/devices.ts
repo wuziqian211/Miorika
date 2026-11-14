@@ -33,6 +33,32 @@ export const devicesData: DeviceItem[] = [
     featured: true,
     year: '2026',
   },
+  {
+    id: 'redmi-note-11t-pro-plus',
+    name: 'Redmi Note 11T Pro+',
+    brand: '红米',
+    category: 'mobile',
+    status: 'backup',
+    specs: '天玑 8100 / 8GB / 512GB',
+    description: '中高端智能手机，适合日常使用与游戏，搭载高刷新率屏幕，目前作为备用机使用',
+    image: '/assets/images/devices/Redmi-Note-11T-Pro-Plus.png',
+    icon: 'material-symbols:mobile-arrow-down-outline-rounded',
+    link: 'https://www.mi.com/redminote11t-pro',
+    year: '2022',
+  },
+  {
+    id: 'xiaomi-air-13',
+    name: '小米笔记本 Air 13.3"',
+    brand: '小米',
+    category: 'desktop',
+    status: 'archived',
+    specs: 'Intel Core i5-8250U / 8GB / 256GB',
+    description: '轻薄笔记本电脑，适合日常办公与学习，目前已停用',
+    image: '/assets/images/devices/Xiaomi-Air-13.png',
+    icon: 'material-symbols:computer-cancel-outline-rounded',
+    link: 'https://www.mi.com/mibookair-13',
+    year: '2016~2026',
+  },
 ];
 
 /** 获取所有设备数据列表 */
