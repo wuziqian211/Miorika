@@ -17,7 +17,7 @@ export interface EmoteData {
     recent_limit: number;
     attr: number;
     focus_pkg_id: number;
-    /** 表情管理 string */
+    /** 表情管理 url */
     schema: string;
   };
   /** 表情包列表 */
@@ -30,7 +30,7 @@ interface EmojiPackage {
   id: number;
   /** 表情包名称 */
   text: string;
-  /** 表情包标志图片 string */
+  /** 表情包标志图片 url */
   url: string;
   /** 表情包创建时间（秒级时间戳） */
   mtime: number;
@@ -48,7 +48,7 @@ interface EmojiPackage {
     label_color?: string;
     /** 购买物品 id */
     item_id?: number;
-    /** 购买物品页面 string */
+    /** 购买物品页面 url */
     item_url?: string;
     asset_id?: number;
   };
@@ -87,9 +87,9 @@ interface EmoteItem {
   package_id: number;
   /** 表情转义符 */
   text: `[${string}]`; // 不考虑 type 为 4（颜文字）的情况
-  /** 表情图片 string */
+  /** 表情图片 url */
   url: string;
-  /** 表情 gif 图片 string */
+  /** 表情 gif 图片 url */
   gif_url?: string;
   /** 表情创建时间（秒级时间戳） */
   mtime: number;
@@ -119,7 +119,7 @@ interface EmoteItem {
     start_time: number;
     /** 活动结束时间（秒级时间戳） */
     end_time: number;
-    /** 活动 string */
+    /** 活动 url */
     jump_url: string;
     /** 解锁条件说明 */
     unlock_descs: string[];
