@@ -1,68 +1,58 @@
-# Shirone Blog
+# Miorika
 
-This site runs on [Shirone](https://github.com/LyraVoid/Shirone) — an
-anime-inspired, Material 3 Expressive blog theme for Astro, installed as the
-`shirones` npm package.
+本站基于 [Shirone](https://github.com/LyraVoid/Shirone) 构建。这是一款采用 Material 3 Expressive 设计、融入二次元风格的 Astro 博客主题，通过 `shirones` npm 包安装。
 
-## Commands
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/screenshot-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="public/assets/images/screenshot-light.webp">
+  <img src="public/assets/images/screenshot-light.webp" alt="Miorika 博客首页预览">
+</picture>
+
+## 常用命令
 
 ```bash
-pnpm install   # install dependencies (run once after init)
-pnpm dev       # start the dev server at http://localhost:4321
-pnpm build     # static build → dist/
-pnpm preview   # preview the production build locally
+pnpm install   # 安装依赖（初始化后执行一次）
+pnpm dev       # 启动开发服务器，默认地址为 http://localhost:20211
+pnpm build     # 构建站点，输出到 dist/
+pnpm preview   # 在本地预览生产构建
 ```
 
-## Project layout
+## 项目结构
 
-| Path | What it is |
+| 路径 | 说明 |
 | --- | --- |
-| `shirones/config/` | site configuration — URL, title, theme colour, sidebar, fonts (TypeScript, fully typed) |
-| `shirones/config/data/` | friends, projects, skills, timeline, … |
-| `shirones/content/` | your posts, moments and other collections |
-| `src/components/` | drop a file here to override a theme component (mirrors the theme's `src/components/` tree) |
-| `src/layouts/` | …same for layouts |
-| `public/` | static assets (favicons, banners, images) |
+| `shirones/config/` | 站点配置，包括网址、标题、主题色、侧边栏、字体等，使用 TypeScript 并提供完整的类型定义 |
+| `shirones/config/data/` | 友链、项目、技能、时间线等数据 |
+| `shirones/content/` | 文章、动态及其他内容集合 |
+| `src/components/` | 按照主题 `src/components/` 的目录结构放置同路径文件，即可覆盖对应组件 |
+| `src/layouts/` | 布局覆盖目录，使用方式与组件覆盖相同 |
+| `public/` | 站点图标、横幅、图片等静态资源 |
 
-## Writing links
+## 链接写法
 
-Use standard Markdown links in `.md` and `.mdx` posts and spec pages:
+在 `.md`、`.mdx` 文章和独立页面（spec）中，使用标准 Markdown 链接：
 
 ```md
-[Link text](https://example.com/)
-[**Bold link text**](https://example.com/)
+[链接文字](https://example.com/)
+[**加粗链接文字**](https://example.com/)
 ```
 
-The `site-markdown-external-links` integration runs after Shirones and preserves
-the theme's Markdown plugins. External HTTP(S) links receive `target="_blank"`
-and `rel="noopener external nofollow noreferrer"` during compilation. Same-origin
-URLs, relative paths, anchors and email links keep their normal behavior.
-Existing `rel` values and explicit targets such as `_self` are preserved.
-Custom JSX links in MDX (for example, links containing an icon component) keep
-their explicit attributes.
+`site-markdown-external-links` 集成在 Shirones 之后运行，并保留主题的 Markdown 插件。编译时，外部 HTTP(S) 链接会自动添加 `target="_blank"` 和 `rel="noopener external nofollow noreferrer"`。同源网址、相对路径、锚点及邮件链接保持原有行为。
 
-## Images in tables
+已有的 `rel` 值和显式指定的跳转目标（如 `_self`）会被保留。MDX 中自定义的 JSX 链接（例如包含图标组件的链接）也会保留其显式设置的属性。
 
-`src/styles/custom.css` applies shared styles to image tables in Markdown and
-MDX content, including spec pages. Cells wrap text and long URLs, and images
-keep their aspect ratio within an 8rem × 8rem preview area. Small images are
-not enlarged; emotes keep their own sizing. Each column keeps a minimum width
-of 8rem, and the theme's horizontal scroll wrapper handles narrow screens.
+## 表格中的图片
 
-To change the preview limit for one table, set
-`--markdown-table-image-max-width` and `--markdown-table-image-max-height` on
-the table or its wrapper. `--markdown-table-cell-min-width` adjusts the minimum
-column width. Article-specific column widths can stay in local CSS, as in
-`shirones/content/posts/about-me/avatar-history.css`.
+`src/styles/custom.css` 为 Markdown 和 MDX 内容中的图片表格提供统一样式，独立页面同样适用。单元格中的文字和长网址会自动换行，图片在 `8rem × 8rem` 的预览区域内保持原始比例。小图不会被放大，表情图片沿用自身尺寸。每列的最小宽度为 `8rem`，窄屏下由主题的横向滚动容器处理溢出。
 
-## Updating the theme
+如需单独调整某个表格的图片预览上限，可在表格或其外层容器上设置 `--markdown-table-image-max-width` 和 `--markdown-table-image-max-height`。使用 `--markdown-table-cell-min-width` 可调整列的最小宽度。文章专用的列宽仍可在局部 CSS 中定义，参见 `shirones/content/posts/about-me/avatar-history.css`。
+
+## 更新主题
 
 ```bash
-npx shirones init            # report drift only
-npx shirones init --update   # add missing files without replacement
-npx shirones init --force    # replace the template after backing up the old copy
+npx shirones init            # 仅检查当前文件与模板的差异
+npx shirones init --update   # 补充缺失文件，不覆盖已有文件
+npx shirones init --force    # 备份现有文件后重新复制模板
 ```
 
-`--force` moves the previous `shirones/`, `public/` and project scaffold files
-to `.shirones-backup/` before copying the installed template. See the package
-documentation for the full configuration reference and component-override rules.
+`--force` 会先将现有的 `shirones/`、`public/` 和项目脚手架文件移至 `.shirones-backup/`，再复制已安装的主题模板。完整配置说明和组件覆盖规则请参阅主题包文档。
