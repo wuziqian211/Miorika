@@ -6,3 +6,10 @@ export const friendsConfig: FriendsConfig = withUserConfig('friends', {
   title: '$t:friends',
   description: '欢迎大家交换友链哟~',
 });
+
+// Keep page icons in the config directory so the theme collects them for offline rendering.
+export const friendsPageIcons = {
+  websites: 'material-symbols:language-rounded',
+  bilibiliUsers: 'fa7-brands:bilibili',
+  application: 'material-symbols:handshake-outline-rounded',
+} as const;

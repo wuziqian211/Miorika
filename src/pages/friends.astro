@@ -1,0 +1,114 @@
+---
+import { getEntry, render } from 'astro:content';
+import Card from '@components/atoms/display/Card.svelte';
+import Icon from '@components/atoms/display/Icon.svelte';
+import Markdown from '@components/content/Markdown.astro';
+import CommentSection from '@components/organisms/comment/CommentSection.astro';
+import I18nKey from '@i18n/i18nKey';
+import MainGridLayout from '@layouts/MainGridLayout.astro';
+import { resolveI18nText } from '@utils/i18n-utils';
+import { getMarkdownStylesheetAssets } from '@utils/markdown-assets';
+import { commentConfig, resolveCommentOptions, siteConfig } from '@/config';
+import { getBilibiliFriendsList, getWebsiteFriendsList } from '../../shirones/config/data/friends';
+import { friendsConfig, friendsPageIcons } from '../../shirones/config/friendsConfig';
+import FriendGroup from '../components/organisms/FriendGroup.svelte';
+
+if (!friendsConfig.enable) return Astro.redirect('/404/');
+
+const pageTitle = resolveI18nText(friendsConfig.title, I18nKey.friends),
+      pageDescription = resolveI18nText(friendsConfig.description, I18nKey.friendsBanner),
+      application = await getEntry('spec', 'friends');
+if (!application) {
+  throw new Error('Friends application content not found');
+}
+
+const { Content, headings: applicationHeadings, remarkPluginFrontmatter } = await render(application),
+      markdownStylesheetAssets = await getMarkdownStylesheetAssets(remarkPluginFrontmatter.markdownSyntaxes),
+      pageCommentEnabled = Boolean(resolveCommentOptions(commentConfig)),
+      headings = [
+        { depth: 2, slug: 'websites', text: '网站' },
+        { depth: 2, slug: 'bilibili-users', text: 'B 站用户' },
+        { depth: 2, slug: 'friendship-application', text: '申请友情链接说明' },
+        ...applicationHeadings,
+      ];
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} page="friends" headings={headings} hasComments={pageCommentEnabled}>
+  {markdownStylesheetAssets.map(({ pack, css }) => <style is:inline slot="head" data-swup-optional={pack} set:html={css} />)}
+  <h1 class="sr-only">{pageTitle}</h1>
+  <div class="friends-page">
+    <FriendGroup
+      id="websites"
+      title="网站"
+      subtitle={pageDescription}
+      icon={friendsPageIcons.websites}
+      friends={getWebsiteFriendsList()}
+      countUnit="个网站"
+      inactiveTag="失效"
+      inactiveLabel="无法访问的友链"
+      client:visible
+    />
+    <FriendGroup
+      id="bilibili-users"
+      title="B 站用户"
+      subtitle="一直以来支持着梦春酱的朋友们 (=・ω・=) 用户信息并非实时更新哟~"
+      icon={friendsPageIcons.bilibiliUsers}
+      friends={getBilibiliFriendsList()}
+      countUnit="位用户"
+      inactiveTag="注销"
+      inactiveLabel="已经注销的朋友"
+      client:visible
+    />
+    <section id="friendship-application" aria-labelledby="friendship-application-title">
+      <Card color="var(--card-bg)" radius="l" class="p-6 md:p-8">
+        <h2 id="friendship-application-title" class="application-title">
+          <span aria-hidden="true"><Icon icon={friendsPageIcons.application} /></span>{' '}
+          申请友情链接说明
+        </h2>
+        <Markdown class="mt-4">
+          <Content />
+        </Markdown>
+      </Card>
+      <CommentSection
+        context={{ key: 'friends', path: '/friends/', title: pageTitle, language: siteConfig.lang }}
+        postCommentEnabled={pageCommentEnabled}
+        class="mt-4"
+      />
+    </section>
+  </div>
+</MainGridLayout>
+
+<style>
+  .friends-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  #friendship-application {
+    min-width: 0;
+    scroll-margin-top: 5rem;
+  }
+
+  .application-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    color: var(--on-surface);
+    font: var(--m3e-type-headline-medium);
+    font-weight: 700;
+  }
+
+  .application-title span {
+    display: inline-flex;
+    flex: none;
+    color: var(--primary);
+  }
+
+  .application-title :global(svg) {
+    width: 2rem;
+    height: 2rem;
+  }
+</style>

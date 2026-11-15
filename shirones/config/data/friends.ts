@@ -2,10 +2,10 @@ import fs from 'node:fs';
 
 /**
  * 友情链接数据配置（结构与 Mizuki 同款，便于互相迁移）。
- * 用于管理友情链接页面的数据：src/pages/friends.astro → organisms/FriendSection。
+ * 用于管理友情链接页面的数据：src/pages/friends.astro → organisms/FriendGroup。
  *
- * 添加友链：在 friendsData 中追加一项即可，页面 / 筛选标签自动生成。
- * tags 会聚合为页面顶部的筛选 chip（OR 命中：选中多个标签时命中任一即显示）。
+ * 网站与 B 站用户分别导出；所属区块由数据来源决定，不再占用展示标签。
+ * tags 会聚合为各区块的筛选标签，网站失效与用户注销分别标为「失效」「注销」。
  */
 export interface FriendItem {
   id: number;
@@ -66,7 +66,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://www.happycola.top/img/avatar.png',
     desc: '学而不思则罔，思而不学则殆。',
     siteurl: 'https://www.happycola.top/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -2,
@@ -74,7 +74,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://weavatar.com/avatar/0b01396273cca253aa6876c020449b655a9cc12e75f921b38ac088569e814b5e',
     desc: 'Blogger / Technophile / Student',
     siteurl: 'https://kegongteng.cn/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -3,
@@ -82,7 +82,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e',
     desc: '盒沐子の日常',
     siteurl: 'https://blog.nichijou.moe/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -4,
@@ -90,7 +90,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://yuk1.uk/assets/img/favicon.webp',
     desc: 'Time goes by, and the years go by.',
     siteurl: 'https://blog.yuk1.uk/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -5,
@@ -98,7 +98,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/shakaianee-top.jpg',
     desc: '给岁月以文明，而不是给文明以岁月。',
     siteurl: 'https://shakaianee.top/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -6,
@@ -106,7 +106,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/blog-mysqil-com.png',
     desc: '一个基于内容分享,创作与灵感结合折腾的笔记博客',
     siteurl: 'https://blog.mysqil.com/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -7,
@@ -114,7 +114,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/goforcex-top.jpeg',
     desc: '摆烂的小站',
     siteurl: 'https://goforcex.top/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -8,
@@ -122,7 +122,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/microharddemo-github-io.svg',
     desc: '逸一时，误一世，逸久逸久罢已龄！',
     siteurl: 'https://microharddemo.github.io/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -9,
@@ -130,7 +130,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/sess-moe.jpg',
     desc: 'Session 的个人博客, 这里有各种类型的有趣的文章内容, 网站使用纯 JavaScript 构建',
     siteurl: 'https://sess.moe/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -10,
@@ -138,7 +138,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://i1.hdslb.com/bfs/face/91059220b13f2bcfcd90fb8b9d699b126dc77543.jpg',
     desc: '成分极为复杂的高中生',
     siteurl: 'https://blog.piglin.eu.org/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -11,
@@ -146,7 +146,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/raxxt-top.png',
     desc: 'B 站用户 “爱玩电脑的特兰克斯” 的个人网站',
     siteurl: 'https://raxxt.top/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -13,
@@ -154,7 +154,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/blog-konpaku-cn.webp',
     desc: '魂恋白楼三尺剑，飞花影里斩春风',
     siteurl: 'https://blog.konpaku.cn/',
-    tags: ['网站', '技术', '医学'],
+    tags: ['技术', '医学'],
   },
   {
     id: -14,
@@ -162,7 +162,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://api.yumeharu.top/api/getuser?mid=444309392&type=avatar_redirect',
     desc: '这里是 Xiaoyu 的软件下载站！',
     siteurl: 'https://iamxiaoyu233.rth3.xyz/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -15,
@@ -170,7 +170,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/fish1000-top.png',
     desc: '永远永远喜欢你！!',
     siteurl: 'https://fish1000.top/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -16,
@@ -178,7 +178,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://beiqian.fun/images/avatar.png',
     desc: '不积跬步无以至千里，不积小流无以成江海。',
     siteurl: 'https://beiqian.fun/',
-    tags: ['网站', '技术', '动漫'],
+    tags: ['技术', '动漫'],
   },
   {
     id: -17,
@@ -186,7 +186,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/nxdaolin-dpdns-org.gif',
     desc: '一个记录家乡故事的小站',
     siteurl: 'https://nxdaolin.dpdns.org/',
-    tags: ['网站', '生活'],
+    tags: ['生活'],
   },
   {
     id: -18,
@@ -194,7 +194,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/tv768-xyz.jpg',
     desc: '精彩的768 让生活添色彩',
     siteurl: 'https://www.tv768.xyz/',
-    tags: ['网站', '放送'],
+    tags: ['放送'],
   },
   {
     id: -19,
@@ -202,7 +202,7 @@ const linksData: FriendItem[] = [
     imgurl: '/assets/images/friends/danmaku-site.png',
     desc: '某野生的神弹幕存档站ヽ(✿ﾟ▽ﾟ)ノ',
     siteurl: 'https://danmaku.site/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
   {
     id: -20,
@@ -210,7 +210,7 @@ const linksData: FriendItem[] = [
     imgurl: 'https://blog.goose.cc.cd/avatar.webp',
     desc: '鹅滴博客嘎嘎',
     siteurl: 'https://blog.goose.cc.cd/',
-    tags: ['网站', '技术'],
+    tags: ['技术'],
   },
 ];
 const unavailableLinksData: FriendItem[] = [
@@ -220,7 +220,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/blog-365sites-top.png',
     desc: '初阅不明言外意，重温方觉字中情',
     siteurl: 'https://blog.365sites.top/',
-    tags: ['网站', '技术', '失效/注销'],
+    tags: ['技术', '失效'],
   },
   {
     id: -1002,
@@ -228,7 +228,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/aperturelaboratories-icoc-vc.png',
     desc: '一个古朴的化学实验室',
     siteurl: 'https://aperturelaboratories.icoc.vc/',
-    tags: ['网站', '放送', '失效/注销'],
+    tags: ['放送', '失效'],
   },
   {
     id: -1003,
@@ -236,7 +236,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/shuxincm-jzfkw-net.png',
     desc: '知心她们，心情美好。',
     siteurl: 'https://shuxincm.jzfkw.net/',
-    tags: ['网站', '放送', '失效/注销'],
+    tags: ['放送', '失效'],
   },
   {
     id: -1004,
@@ -244,7 +244,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/zhiguanmedia-jzfkw-net.png',
     desc: '做有情怀的媒体',
     siteurl: 'https://zhiguanmedia.jzfkw.net/',
-    tags: ['网站', '放送', '失效/注销'],
+    tags: ['放送', '失效'],
   },
   {
     id: -1005,
@@ -252,7 +252,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/shefengmi-10-jzfkw-net.jpg',
     desc: '看着社会与法 听着凤凰传奇',
     siteurl: 'https://shefengmi-10.jzfkw.net/',
-    tags: ['网站', '放送', '失效/注销'],
+    tags: ['放送', '失效'],
   },
   {
     id: -1006,
@@ -260,7 +260,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/mingchen2485-jzfkw-net.png',
     desc: '我们不做视频，我们只是央视网的搬运工。',
     siteurl: 'https://mingchen2485.jzfkw.net/',
-    tags: ['网站', '放送', '失效/注销'],
+    tags: ['放送', '失效'],
   },
   {
     id: -1007,
@@ -268,7 +268,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/wuziqian211-icoc-vc.png',
     desc: '梦春酱的旧网站，已不再更新',
     siteurl: 'https://wuziqian211.icoc.vc/',
-    tags: ['网站', '技术', '失效/注销'],
+    tags: ['技术', '失效'],
   },
   {
     id: -1008,
@@ -276,7 +276,7 @@ const unavailableLinksData: FriendItem[] = [
     imgurl: '/assets/images/friends/woxile-rth3-xyz.jpg',
     desc: 'B 站用户 “我汐了_233” 的个人网站',
     siteurl: 'https://woxile.rth3.xyz/',
-    tags: ['网站', '技术', '失效/注销'],
+    tags: ['技术', '失效'],
   },
 ];
 
@@ -297,15 +297,21 @@ try {
   fdata = JSON.parse(fs.readFileSync('./src/data/custom/friendsList.json', { encoding: 'utf8' }));
 }
 
-usersData.push(...fdata.n.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['B 站朋友'] })));
+usersData.push(...fdata.n.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: [] })));
 if (fdata.d?.length) {
-  deletedUsersData.push(...fdata.d.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['B 站朋友', '失效/注销'] })));
+  deletedUsersData.push(...fdata.d.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['注销'] })));
 }
 
-// 友情链接数据
-export const friendsData: FriendItem[] = [...shuffleArray(linksData), ...shuffleArray(usersData), ...shuffleArray(deletedUsersData), ...shuffleArray(unavailableLinksData)];
+const websiteFriendsData = [...shuffleArray(linksData), ...shuffleArray(unavailableLinksData)];
+const bilibiliFriendsData = [...shuffleArray(usersData), ...shuffleArray(deletedUsersData)];
 
-// 获取所有友情链接数据（稳定顺序，测试可复现）
+export const getWebsiteFriendsList = (): FriendItem[] => websiteFriendsData;
+export const getBilibiliFriendsList = (): FriendItem[] => bilibiliFriendsData;
+
+// 友情链接数据
+export const friendsData: FriendItem[] = [...websiteFriendsData, ...bilibiliFriendsData];
+
+// 获取所有友情链接数据（本次加载期间保持顺序不变）
 export const getFriendsList = (): FriendItem[] => friendsData;
 
 // 获取随机排序的友情链接数据（避免固定排序，按需使用）

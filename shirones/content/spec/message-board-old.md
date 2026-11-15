@@ -1,3 +1,5 @@
+<!-- 用于 src/pages/message-board-old.astro -->
+
 # 留言板（旧网站）
 
 :::tip 注意

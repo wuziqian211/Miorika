@@ -8,6 +8,29 @@
   --gitee-text-color: #ff7b86;
 }
 
+/* Image tables should fit the article instead of growing to the image's
+   intrinsic width. Keep the theme's scroll wrapper for narrow screens. */
+.custom-md .markdown-table-scroll > table:has(img:not(.emote)) {
+  width: 100%;
+}
+
+.custom-md table:has(img:not(.emote)) :is(th, td) {
+  min-width: var(--markdown-table-cell-min-width, 8rem);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+}
+
+/* Reset prose image spacing and preserve the aspect ratio of thumbnails.
+   Override these variables on a table when it needs larger previews. */
+.custom-md :where(table) img:not(.emote) {
+  width: auto;
+  height: auto;
+  max-width: min(100%, var(--markdown-table-image-max-width, 8rem));
+  max-height: var(--markdown-table-image-max-height, 8rem);
+  margin-block: 0;
+}
+
 img.emote {
   display: inline;
   height: 2.5em;

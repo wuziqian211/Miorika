@@ -21,7 +21,7 @@ export default defineConfig({
       // `src/components/`, or point at them explicitly:
       // components: { 'atoms/blog/PostCard': './src/components/PostCard.astro' },
       components: { 'molecules/SearchBar': './src/components/molecules/SearchBar.svelte' },
-      excludeRoutes: ['/posts/[...slug]', '/robots.txt'], // 文章路径在 /archives/%year%/%monthnum%/%day%/
+      excludeRoutes: ['/posts/[...slug]', '/robots.txt', '/friends'], // 文章和友链页面由本站提供
     }),
     markdownExternalLinks(),
     icon(),

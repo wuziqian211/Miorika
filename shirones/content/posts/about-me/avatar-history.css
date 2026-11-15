@@ -1,14 +1,8 @@
-/* Keep avatar sizing and text wrapping local to the avatar history table. */
+/* Article-specific column widths; shared image table rules live in custom.css. */
 .custom-md .avatar-history > table {
   width: 100%;
   min-width: 40rem;
   table-layout: fixed;
-}
-
-.custom-md .avatar-history :is(th, td) {
-  white-space: normal;
-  overflow-wrap: anywhere;
-  vertical-align: middle;
 }
 
 .custom-md .avatar-history :is(th, td):first-child {

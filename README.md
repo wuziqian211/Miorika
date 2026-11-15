@@ -41,6 +41,20 @@ Existing `rel` values and explicit targets such as `_self` are preserved.
 Custom JSX links in MDX (for example, links containing an icon component) keep
 their explicit attributes.
 
+## Images in tables
+
+`src/styles/custom.css` applies shared styles to image tables in Markdown and
+MDX content, including spec pages. Cells wrap text and long URLs, and images
+keep their aspect ratio within an 8rem × 8rem preview area. Small images are
+not enlarged; emotes keep their own sizing. Each column keeps a minimum width
+of 8rem, and the theme's horizontal scroll wrapper handles narrow screens.
+
+To change the preview limit for one table, set
+`--markdown-table-image-max-width` and `--markdown-table-image-max-height` on
+the table or its wrapper. `--markdown-table-cell-min-width` adjusts the minimum
+column width. Article-specific column widths can stay in local CSS, as in
+`shirones/content/posts/about-me/avatar-history.css`.
+
 ## Updating the theme
 
 ```bash
