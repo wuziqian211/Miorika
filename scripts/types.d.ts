@@ -17,7 +17,7 @@ export interface EmoteData {
     recent_limit: number;
     attr: number;
     focus_pkg_id: number;
-    /** 表情管理 url */
+    /** 表情管理 string */
     schema: string;
   };
   /** 表情包列表 */
@@ -30,7 +30,7 @@ interface EmojiPackage {
   id: number;
   /** 表情包名称 */
   text: string;
-  /** 表情包标志图片 url */
+  /** 表情包标志图片 string */
   url: string;
   /** 表情包创建时间（秒级时间戳） */
   mtime: number;
@@ -48,7 +48,7 @@ interface EmojiPackage {
     label_color?: string;
     /** 购买物品 id */
     item_id?: number;
-    /** 购买物品页面 url */
+    /** 购买物品页面 string */
     item_url?: string;
     asset_id?: number;
   };
@@ -87,9 +87,9 @@ interface EmoteItem {
   package_id: number;
   /** 表情转义符 */
   text: `[${string}]`; // 不考虑 type 为 4（颜文字）的情况
-  /** 表情图片 url */
+  /** 表情图片 string */
   url: string;
-  /** 表情 gif 图片 url */
+  /** 表情 gif 图片 string */
   gif_url?: string;
   /** 表情创建时间（秒级时间戳） */
   mtime: number;
@@ -119,7 +119,7 @@ interface EmoteItem {
     start_time: number;
     /** 活动结束时间（秒级时间戳） */
     end_time: number;
-    /** 活动 url */
+    /** 活动 string */
     jump_url: string;
     /** 解锁条件说明 */
     unlock_descs: string[];
@@ -142,4 +142,103 @@ export interface WalineEmojiInfo {
   icon: string;
   /** Emoji 图片列表 */
   items: string[];
+}
+
+/** 多用户信息 API 主体数据 */
+export type UsersInfoData = UsersInfoItem[];
+
+/** 单个用户信息 */
+export interface UsersInfoItem {
+  /** mid */
+  mid: number;
+  /** 昵称 */
+  name: string;
+  /** 性别 */
+  sex: string;
+  /** 头像 */
+  face: string;
+  /** 个性签名 */
+  sign: string;
+  /** 用户权限等级 */
+  rank: number;
+  /** 等级 */
+  level: number;
+  /** 封禁状态 */
+  silence: 0 | 1;
+  /** 大会员信息 */
+  vip: {
+    /** 会员类型 */
+    type: number;
+    /** 会员状态 */
+    status: 0 | 1;
+    /** 会员过期时间（毫秒级时间戳） */
+    due_date: number;
+    /** 支付类型 */
+    vip_pay_type: 0 | 1;
+    theme_type: 0;
+    /** 会员标签 */
+    label: {
+      path: string;
+      /** 会员类型文案 */
+      text: string;
+      /** 会员标签 */
+      label_theme: string;
+      /** 会员标签文字颜色 */
+      text_color: string;
+      bg_style: 0 | 1;
+      /** 会员标签背景颜色 */
+      bg_color: string;
+      /** 会员标签边框颜色 */
+      border_color: string;
+      use_img_label: true;
+      img_label_uri_hans: string;
+      img_label_uri_hant: string;
+      /** 大会员牌子图片（简体版） */
+      img_label_uri_hans_static: string;
+      /** 大会员牌子图片（繁体版） */
+      img_label_uri_hant_static: string;
+      label_id: number;
+      label_goto: null | { mobile: string; pc_web: string };
+      img_label_uri_i18n: string;
+      img_label_uri_i18n_static: string;
+      label_type: number;
+    };
+    /** 是否显示会员图标 */
+    avatar_subscript: number;
+    /** 会员昵称颜色 */
+    nickname_color: string;
+    /** 大会员类型 */
+    role: number;
+    /** 大会员角标地址 */
+    avatar_subscript_url: string;
+    /** 电视大会员状态 */
+    tv_vip_status: 0 | 1;
+    /** 电视大会员支付类型 */
+    tv_vip_pay_type: 0 | 1;
+    /** 电视大会员过期时间（秒级时间戳） */
+    tv_due_date: number;
+    /** 大会员角标信息 */
+    avatar_icon: { icon_type?: number; icon_resource: {} };
+    ott_info: { vip_type: number; pay_type: number; pay_channel_id: string; status: number; overdue_time: number };
+    super_vip: { is_super_vip: boolean };
+  };
+  /** 认证信息 */
+  official: {
+    /** 认证类型 */
+    role: number;
+    /** 认证信息 */
+    title: string;
+    /** 认证备注 */
+    desc: string;
+    /** 是否认证 */
+    type: -1/* 无 */ | 0/* UP 主认证 */ | 1/* 机构认证 */;
+  };
+  /** 是否已注销 */
+  is_deleted: 0 | 1;
+  /** 是否为数字藏品头像 */
+  face_nft: 0 | 1;
+  face_nft_new: 0 | 1;
+  /** 是否为硬核会员 */
+  is_senior_member: 0 | 1;
+  [key: string]: unknown; // 其他字段
 }

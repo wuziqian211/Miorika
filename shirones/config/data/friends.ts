@@ -1,5 +1,3 @@
-import fs from 'node:fs';
-
 /**
  * 友情链接数据配置（结构与 Mizuki 同款，便于互相迁移）。
  * 用于管理友情链接页面的数据：src/pages/friends.astro → organisms/FriendGroup。
@@ -7,6 +5,9 @@ import fs from 'node:fs';
  * 网站与 B 站用户分别导出；所属区块由数据来源决定，不再占用展示标签。
  * tags 会聚合为各区块的筛选标签，网站失效与用户注销分别标为「失效」「注销」。
  */
+
+import { usersInfo } from '../../../src/data/custom/friendsInfo.json';
+
 export interface FriendItem {
   id: number;
   title: string;
@@ -14,41 +15,6 @@ export interface FriendItem {
   desc: string;
   siteurl: string;
   tags: string[];
-}
-
-interface APIResponse<T> {
-  code: number;
-  message: string;
-  data: T;
-  extInfo: Record<string, unknown>;
-}
-
-interface FriendsData {
-  /** 正常用户 */
-  n: UserItem[];
-  /** 已注销用户 */
-  d?: UserItem[];
-  /** 更新时间戳（毫秒级） */
-  m: number;
-}
-
-interface UserItem {
-  /** 头像 */
-  a: string;
-  /** 头像图标 */
-  i?: 0/* UP 主认证 */ | 1/* 机构认证 */ | 2/* 大会员 */;
-  /** 是否拥有数字藏品图标 */
-  n?: 0 | 1;
-  /** 认证信息 */
-  o?: string;
-  /** 昵称颜色 */
-  c?: string;
-  /** 昵称 */
-  t: string;
-  /** 个性签名 */
-  d: string;
-  /** 空间链接 */
-  l: string;
 }
 
 const shuffleArray = <T> (array: T[]): T[] => {
@@ -280,30 +246,11 @@ const unavailableLinksData: FriendItem[] = [
   },
 ];
 
-const usersData: FriendItem[] = [],
-      deletedUsersData: FriendItem[] = [];
-let fdata: FriendsData;
+const usersData = usersInfo.filter(f => !f.is_deleted).map(f => ({ id: f.mid, title: f.name, imgurl: f.face, desc: f.sign.replace(/\d{5,}/s, '…'), siteurl: `https://space.bilibili.com/${f.mid}`, tags: [] })),
+      deletedUsersData = usersInfo.filter(f => f.is_deleted).map(f => ({ id: f.mid, title: f.name, imgurl: f.face, desc: f.sign.replace(/\d{5,}/s, '…'), siteurl: `https://space.bilibili.com/${f.mid}`, tags: ['注销'] }));
 
-try {
-  const fjson = <APIResponse<FriendsData>> await (await fetch('https://api.yumeharu.top/api/modules?id=friends&version=3&type=json')).json();
-  if (fjson.code === 0) {
-    fdata = fjson.data;
-    // fs.writeFileSync('./src/data/custom/friendsList.json', JSON.stringify(fdata, null, 2));
-  } else {
-    throw new TypeError(`Response code: ${fjson.code}`);
-  }
-} catch (e) {
-  console.error(e);
-  fdata = JSON.parse(fs.readFileSync('./src/data/custom/friendsList.json', { encoding: 'utf8' }));
-}
-
-usersData.push(...fdata.n.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: [] })));
-if (fdata.d?.length) {
-  deletedUsersData.push(...fdata.d.map(f => ({ id: +f.l.split('/').at(-1)!, title: f.t, imgurl: f.a, desc: f.d, siteurl: f.l, tags: ['注销'] })));
-}
-
-const websiteFriendsData = [...shuffleArray(linksData), ...shuffleArray(unavailableLinksData)];
-const bilibiliFriendsData = [...shuffleArray(usersData), ...shuffleArray(deletedUsersData)];
+const websiteFriendsData = [...shuffleArray(linksData), ...shuffleArray(unavailableLinksData)],
+      bilibiliFriendsData = [...shuffleArray(usersData), ...shuffleArray(deletedUsersData)];
 
 export const getWebsiteFriendsList = (): FriendItem[] => websiteFriendsData;
 export const getBilibiliFriendsList = (): FriendItem[] => bilibiliFriendsData;
