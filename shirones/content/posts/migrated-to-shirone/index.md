@@ -3,7 +3,7 @@ title: 小屋换新装啦！本站已迁移至 Shirone 主题 ♡
 published: 2026-11-15
 publishedAt: 2026-11-15T00:00:00+08:00
 updated: 2026-11-15
-updatedAt: 2026-11-15T00:35:00+08:00
+updatedAt: 2026-11-15T19:05:00+08:00
 description: 本网站换上 Shirone 新衣服啦！二次元风格、Material 3 Expressive 设计，还有收纳文章与日常的小天地，一起来逛逛吧~
 image: ./shirone-icon.webp
 tags:
@@ -19,7 +19,7 @@ pinned: true
 
 叮咚——欢迎回到==**梦春酱的小屋**==！你有没有发现，这里和以前有些不一样啦？(｡･ω･｡)ﾉ♡
 
-没错，本网站已经迁移至 [Astro](https://astro.build/) 框架，并换上了 [Shirone](https://shirone.mysqil.com/) 主题！现在的 ==**Miorika**==，正穿着新衣服，等你进来坐坐呢 (❁´◡`❁)
+没错，本网站已经在 **2026 年 11 月 15 日**迁移至 [Astro](https://astro.build/) 框架，并换上了 [Shirone](https://shirone.mysqil.com/) 主题！现在的 ==**Miorika**==，正穿着新衣服，等你进来坐坐呢 (❁´◡`❁)
 
 从最初使用建站平台搭起的小网站，到陪伴我许久的 [Hexo](https://hexo.io/) 与 [NexT](https://theme-next.js.org/)，再到如今的 ==Astro=={.tertiary} 与 ==Shirone=={.secondary}，这个 Blog 又翻开了新的一页捏~
 
@@ -29,7 +29,11 @@ NexT 陪我记录了不少回忆，不过，随着自己的喜好慢慢变化，
 
 而 **Shirone**，恰好就是很合我心意的那一款！
 
-它是一款基于 **Astro** 的 Blog 主题，将**二次元风格**与 **Material 3 Expressive** 设计结合在一起 (。・ω・。) 页面有可爱的气息，内容也能清清楚楚地呈现在眼前，对喜欢写技术文章、又想让网站保留一点软萌个性的我来说，这种感觉就很对味 ( •̀ ω •́ )✧
+它是一款基于 **Astro** 的 Blog 主题，将**二次元风格**与 **M3E** 设计结合在一起 (。・ω・。) 页面有可爱的气息，内容也能清清楚楚地呈现在眼前，对喜欢写技术文章、又想让网站保留一点软萌个性的我来说，这种感觉就很对味 ( •̀ ω •́ )✧
+
+*[M3E]: Material 3 Expressive
+
+说起来，Shirone 的前身 [**Mizuki**](https://github.com/LyraVoid/Mizuki) 同样是一款二次元风格的 Blog 主题，不过，由于性能问题、架构混乱等因素影响，原作者最终决定于 **2026 年 8 月 11 日**启动全面重构，以 **M3E** 为设计基础打造 [**Shirone**](https://github.com/LyraVoid/Shirone)，也就有了如今小屋穿上的这件新衣服~
 
 ![Shirone 主题截图](./shirone-screenshot.webp)[+图2]
 
