@@ -21,7 +21,7 @@ export interface EmoteData {
     schema: string;
   };
   /** 表情包列表 */
-  packages: EmojiPackage[];
+  packages: null | EmojiPackage[];
 }
 
 /** 表情包信息 */

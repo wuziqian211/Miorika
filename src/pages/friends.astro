@@ -13,7 +13,15 @@ import { getBilibiliFriendsList, getWebsiteFriendsList } from '../../shirones/co
 import { friendsConfig, friendsPageIcons } from '../../shirones/config/friendsConfig';
 import FriendGroup from '../components/organisms/FriendGroup.svelte';
 
+import { modifiedTimestamp } from '../data/custom/friendsInfo.json';
+
 if (!friendsConfig.enable) return Astro.redirect('/404/');
+
+const getDate = (ts: number): string => { // 根据时间戳返回日期时间
+  if (typeof ts !== 'number' || ts === 0) return '未知';
+  const d = new Date(ts + (new Date().getTimezoneOffset() + 480) * 60000);
+  return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')} ${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}:${d.getSeconds().toString().padStart(2, '0')}`;
+};
 
 const pageTitle = resolveI18nText(friendsConfig.title, I18nKey.friends),
       pageDescription = resolveI18nText(friendsConfig.description, I18nKey.friendsBanner),
@@ -27,8 +35,8 @@ const { Content, headings: applicationHeadings, remarkPluginFrontmatter } = awai
       pageCommentEnabled = Boolean(resolveCommentOptions(commentConfig)),
       headings = [
         { depth: 2, slug: 'websites', text: '网站' },
-        { depth: 2, slug: 'bilibili-users', text: 'B 站用户' },
         { depth: 2, slug: 'friendship-application', text: '申请友情链接说明' },
+        { depth: 2, slug: 'bilibili-users', text: 'B 站用户' },
         ...applicationHeadings,
       ];
 ---
@@ -48,17 +56,6 @@ const { Content, headings: applicationHeadings, remarkPluginFrontmatter } = awai
       inactiveLabel="无法访问的友链"
       client:visible
     />
-    <FriendGroup
-      id="bilibili-users"
-      title="B 站用户"
-      subtitle="一直以来支持着梦春酱的朋友们 (=・ω・=) 用户信息并非实时更新哟~"
-      icon={friendsPageIcons.bilibiliUsers}
-      friends={getBilibiliFriendsList()}
-      countUnit="位用户"
-      inactiveTag="注销"
-      inactiveLabel="已经注销的朋友"
-      client:visible
-    />
     <section id="friendship-application" aria-labelledby="friendship-application-title">
       <Card color="var(--card-bg)" radius="l" class="p-6 md:p-8">
         <h2 id="friendship-application-title" class="application-title">
@@ -69,12 +66,23 @@ const { Content, headings: applicationHeadings, remarkPluginFrontmatter } = awai
           <Content />
         </Markdown>
       </Card>
-      <CommentSection
-        context={{ key: 'friends', path: '/friends/', title: pageTitle, language: siteConfig.lang }}
-        postCommentEnabled={pageCommentEnabled}
-        class="mt-4"
-      />
     </section>
+    <FriendGroup
+      id="bilibili-users"
+      title="B 站用户"
+      subtitle={`一直以来支持着梦春酱的朋友们 (=・ω・=) 用户信息并非实时更新哟~（最近更新时间：${getDate(modifiedTimestamp)}）`}
+      icon={friendsPageIcons.bilibiliUsers}
+      friends={getBilibiliFriendsList()}
+      countUnit="位用户"
+      inactiveTag="注销"
+      inactiveLabel="已经注销的朋友"
+      client:visible
+    />
+    <CommentSection
+      context={{ key: 'friends', path: '/friends/', title: pageTitle, language: siteConfig.lang }}
+      postCommentEnabled={pageCommentEnabled}
+      class="mt-4"
+    />
   </div>
 </MainGridLayout>
 

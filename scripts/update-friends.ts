@@ -9,9 +9,9 @@ import type { APIResponse, UsersInfoData, UsersInfoItem } from './types';
 import fs from 'node:fs/promises';
 import { friends } from '../src/data/custom/friendsList.ts';
 
-const { SESSDATA: sessionData, CSRF: csrfToken, MID: mid } = process.env; // 登录信息
+const { SESSDATA: sessionData, CSRF: csrfToken, MID: selfMid } = process.env; // 登录信息
 const headers = { // 请求标头
-  Cookie: `SESSDATA=${sessionData}; bili_jct=${csrfToken}; DedeUserID=${mid}`,
+  Cookie: `SESSDATA=${sessionData}; bili_jct=${csrfToken}; DedeUserID=${selfMid}`,
   Origin: 'https://www.bilibili.com',
   Referer: 'https://www.bilibili.com/',
   'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36',
@@ -29,7 +29,19 @@ for await (const json of jsonList) {
   usersInfo.push(...Object.values(json.data));
 }
 
-fs.writeFile('./src/data/custom/friendsInfo.json', JSON.stringify({ modifiedTimestamp: Date.now(), usersInfo }, null, 2));
+usersInfo.sort((a, b) => a.mid - b.mid);
+
+fs.writeFile(
+  './src/data/custom/friendsInfo.json',
+  JSON.stringify(
+    {
+      modifiedTimestamp: Date.now(),
+      usersInfo: usersInfo.map(({ mid, name, sex, face, sign, level, silence, vip: { type, status }, official, is_deleted, face_nft, face_nft_new, is_senior_member }) => ({ mid, name, sex, face, sign, level, silence, vip: { type, status }, official, is_deleted, face_nft, face_nft_new, is_senior_member })),
+    },
+    null,
+    2,
+  ),
+);
 
 let friendsListText = await fs.readFile('./src/data/custom/friendsList.ts', { encoding: 'utf8' });
 friendsListText = friendsListText
@@ -39,6 +51,6 @@ friendsListText = friendsListText
   )
   .replace(
     /(?<=const friends = \[.*\n)(?: {2}\d+, \/\/ [^\n]*\n)+/s,
-    `${usersInfo.filter(i => !i.is_deleted).sort((a, b) => a.mid - b.mid).map(i => `  ${i.mid}, // ${i.name}`).join('\n')}\n`,
+    `${usersInfo.filter(i => !i.is_deleted).map(i => `  ${i.mid}, // ${i.name}`).join('\n')}\n`,
   );
 fs.writeFile('./src/data/custom/friendsList.ts', friendsListText);

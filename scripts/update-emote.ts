@@ -15,10 +15,10 @@ const headers = { // 请求标头
   Referer: 'https://www.bilibili.com/',
   'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36',
 };
-const emojiList: WalineEmojiInfo[] = [];
 
-const ejson = await (await fetch('https://api.bilibili.com/x/emote/user/panel/web?business=reply', { headers })).json() as APIResponse<EmoteData>;
-if (ejson.code !== 0) throw new TypeError(`获取表情包数据失败，错误码：${ejson.code}，错误信息：${ejson.message}`);
+const emojiList: WalineEmojiInfo[] = [],
+      ejson = await (await fetch('https://api.bilibili.com/x/emote/user/panel/web?business=reply', { headers })).json() as APIResponse<EmoteData>;
+if (ejson.code !== 0 || !ejson.data.packages?.length) throw new TypeError(`获取表情包数据失败，错误码：${ejson.code}，错误信息：${ejson.message}`);
 
 await fs.rm('./public/assets/images/emote/', { force: true, recursive: true }); // 删除旧的表情包文件夹
 await fs.mkdir('./public/assets/images/emote/'); // 创建新的表情包文件夹

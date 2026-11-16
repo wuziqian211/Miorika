@@ -171,4 +171,10 @@ export default defineConfig([
       '@stylistic/switch-colon-spacing': 'error',
     },
   },
+  {
+    files: ['**/*.astro'],
+    rules: {
+      'consistent-return': 'off',
+    },
+  },
 ]);

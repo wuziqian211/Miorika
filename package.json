@@ -12,7 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "emote:generate": "node ./scripts/generate-emote.ts",
+    "emote:update": "node ./scripts/update-emote.ts",
     "friends:update": "node ./scripts/update-friends.ts",
     "build:waline": "esbuild src/scripts/waline-client.ts --bundle --format=iife --global-name=Waline --minify --outdir=public/assets/ --entry-names=[ext]/[name]"
   },

@@ -1,7 +1,11 @@
 export interface APIResponse<T> {
+  /** 返回值 */
   code: number;
+  /** 错误信息 */
   message: string;
+  /** 回复数据本体 */
   data: T | null;
+  /** 扩展信息 */
   extInfo: Record<string, unknown>;
 }
 
