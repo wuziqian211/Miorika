@@ -10,18 +10,19 @@ import { withUserConfig } from '@/utils/config-overlay.ts';
  * - order：排序方向，默认为 'desc'（时间倒序，最新在前）；可选 'asc'（正序）；
  * - disabledTitles：可选被禁用的事件标题列表；
  *
- * 注：时间线的具体节点数据（标题、日期、经历描述、要点列表、关联链接等）请在 `src/data/timeline.ts` 中维护。
+ * 注：时间线的具体节点数据（标题、日期、经历描述、要点列表、关联链接等）请在 `shirones/config/data/timeline.ts` 中维护。
  */
 export const timelineConfig: TimelineConfig = withUserConfig('timeline', {
-  enable: false, // 二期补充
+  enable: true,
   title: '$t:timeline',
-  description: '$t:timelineBanner',
+  description: '这里是我的视频创作、账号足迹、粉丝里程碑与成长经历哟 (｡･ω･｡)ﾉ♡',
   categories: [
-    { key: 'milestone', label: 'Milestones', icon: 'material-symbols:flag-rounded' },
-    { key: 'project', label: 'Projects', icon: 'material-symbols:code-rounded' },
-    { key: 'career', label: 'Career', icon: 'material-symbols:work-rounded' },
-    { key: 'education', label: 'Education', icon: 'material-symbols:school-rounded' },
-    { key: 'life', label: 'Life', icon: 'material-symbols:favorite-rounded' },
+    { key: 'video', label: '视频创作', icon: 'material-symbols:movie-outline-rounded' },
+    { key: 'account', label: '账号足迹', icon: 'material-symbols:person-outline-rounded' },
+    { key: 'milestone', label: '粉丝与播放里程碑', icon: 'material-symbols:flag-outline-rounded' },
+    { key: 'project', label: '程序与工具', icon: 'material-symbols:code-outline-rounded' },
+    { key: 'education', label: '学习成长', icon: 'material-symbols:school-outline-rounded' },
+    { key: 'life', label: '生活记录', icon: 'material-symbols:favorite-outline-rounded' },
   ],
   order: 'desc',
   // disabledTitles: [],
