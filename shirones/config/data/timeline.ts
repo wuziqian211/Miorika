@@ -12,6 +12,9 @@ export const timelineData: TimelineItem[] = [
     category: 'project',
     description: '将网站由 Hexo NexT 主题迁移到 Astro Shirone 主题。',
     tags: ['博客', 'Astro', 'Shirone'],
+    links: [
+      { label: '查看源码', url: 'https://github.com/wuziqian211/Miorika', icon: 'simple-icons:github' },
+    ],
     icon: 'material-symbols:language-outline-rounded',
     featured: true,
   },
@@ -227,6 +230,9 @@ export const timelineData: TimelineItem[] = [
     category: 'project',
     description: '使用 Hexo NexT 主题搭建个人网站。',
     tags: ['博客', 'Hexo', 'NexT'],
+    links: [
+      { label: '查看源码', url: 'https://github.com/wuziqian211/website-src', icon: 'simple-icons:github' },
+    ],
     icon: 'material-symbols:language-outline-rounded',
     featured: true,
   },
