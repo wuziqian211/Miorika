@@ -9,7 +9,7 @@ export const friendsConfig: FriendsConfig = withUserConfig('friends', {
 
 // Keep page icons in the config directory so the theme collects them for offline rendering.
 export const friendsPageIcons = {
-  websites: 'material-symbols:language-rounded',
+  websites: 'material-symbols:language-outline-rounded',
   bilibiliUsers: 'fa7-brands:bilibili',
   application: 'material-symbols:handshake-outline-rounded',
 } as const;

@@ -16,7 +16,7 @@ export const skillsConfig: SkillsConfig = withUserConfig('skills', {
   title: '$t:skills',
   description: '记录编程语言、Web 开发与日常工具的学习和实践，展示逐步积累的技能。',
   categories: [
-    { key: 'language', label: '编程语言', icon: 'material-symbols:code-rounded' },
+    { key: 'language', label: '编程语言', icon: 'material-symbols:code-outline-rounded' },
     { key: 'frontend', label: '前端开发', icon: 'material-symbols:web-outline-rounded' },
     { key: 'backend', label: '后端开发', icon: 'material-symbols:dns-outline-rounded' },
     { key: 'tooling', label: '开发工具', icon: 'material-symbols:construction-outline-rounded' },

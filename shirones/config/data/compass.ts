@@ -39,7 +39,7 @@ export const compassData: CompassShelf[] = [
   {
     key: 'dev',
     name: '开发与部署',
-    icon: 'material-symbols:code-rounded',
+    icon: 'material-symbols:code-outline-rounded',
     blurb: '查阅文档、协作开发与部署网站的常用入口',
     entries: [
       {

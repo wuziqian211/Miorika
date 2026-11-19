@@ -60,7 +60,7 @@ export const LinkPresets = {
   Compass: {
     name: i18n(I18nKey.compass),
     url: '/compass/',
-    icon: 'material-symbols:explore-rounded',
+    icon: 'material-symbols:explore-outline-rounded',
     pageKey: 'compass',
   },
   Skills: {
@@ -78,7 +78,7 @@ export const LinkPresets = {
   Devices: {
     name: i18n(I18nKey.devices),
     url: '/devices/',
-    icon: 'material-symbols:devices-rounded',
+    icon: 'material-symbols:devices-outline-rounded',
     pageKey: 'devices',
   },
   Games: {
@@ -90,7 +90,7 @@ export const LinkPresets = {
   Timeline: {
     name: i18n(I18nKey.timeline),
     url: '/timeline/',
-    icon: 'material-symbols:timeline-rounded',
+    icon: 'material-symbols:timeline-outline-rounded',
     pageKey: 'timeline',
   },
   Albums: {
@@ -108,7 +108,7 @@ export const LinkPresets = {
   Tags: {
     name: i18n(I18nKey.tags),
     url: '/tags/',
-    icon: 'material-symbols:tag-rounded',
+    icon: 'material-symbols:tag-outline-rounded',
     pageKey: 'tags',
   },
   Series: {
@@ -143,7 +143,7 @@ const defaultNavBarConfig: NavBarConfig = {
     LinkPresets.Albums,
     {
       name: i18n(I18nKey.more),
-      icon: 'material-symbols:apps-rounded',
+      icon: 'material-symbols:apps-outline-rounded',
       children: [
         LinkPresets.Timeline,
         LinkPresets.Projects,
