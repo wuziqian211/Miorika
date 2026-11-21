@@ -1,9 +1,218 @@
 {
+  "mode": "external",
   "title": "美图分享",
+  "cover": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/008.jpg",
   "description": "动漫美图分享，图片均来自网络，如有侵权请联系删除",
   "date": "2026-11-16",
   "tags": ["美图", "动漫"],
   "layout": "masonry",
   "columns": 3,
-  "hidden": false
+  "hidden": false,
+  "photos": [
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/001.jpg",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/002.jpg",
+      "width": 2425,
+      "height": 3402
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/003.jpg",
+      "width": 2805,
+      "height": 2586
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/004.jpg",
+      "width": 2531,
+      "height": 4096
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/005.png",
+      "width": 1200,
+      "height": 1828
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/006.png",
+      "width": 3805,
+      "height": 2919
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/007.jpeg",
+      "width": 1080,
+      "height": 2340
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/008.jpg",
+      "width": 2437,
+      "height": 3484
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/009.jpg",
+      "width": 640,
+      "height": 903
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/010.png",
+      "width": 3584,
+      "height": 5376
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/011.png",
+      "width": 1378,
+      "height": 1949
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/012.jpg",
+      "width": 1404,
+      "height": 2048
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/013.jpg",
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/014.jpg",
+      "width": 1268,
+      "height": 2147
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/015.jpeg",
+      "width": 736,
+      "height": 920
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/016.jpeg",
+      "width": 736,
+      "height": 1308
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/017.jpeg",
+      "width": 675,
+      "height": 1200
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/018.jpg",
+      "width": 1038,
+      "height": 1516
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/019.jpg",
+      "width": 900,
+      "height": 1200
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/020.jpg",
+      "width": 4960,
+      "height": 7016
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/021.jpg",
+      "width": 1250,
+      "height": 2048
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/022.png",
+      "width": 2500,
+      "height": 4000
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/023.jpeg",
+      "width": 1448,
+      "height": 2048
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/024.jpeg",
+      "width": 1031,
+      "height": 1650
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/025.jpg",
+      "width": 1195,
+      "height": 1905
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/026.jpg",
+      "width": 1800,
+      "height": 2500
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/027.jpg",
+      "width": 799,
+      "height": 1279
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/028.png",
+      "width": 4000,
+      "height": 5656
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/029.jpg",
+      "width": 4551,
+      "height": 2560
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/030.png",
+      "width": 2869,
+      "height": 5469
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/031.jpg",
+      "width": 6256,
+      "height": 12000
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/032.jpg",
+      "width": 1280,
+      "height": 1808
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/033.jpg",
+      "width": 1448,
+      "height": 2048
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/034.jpg",
+      "width": 2048,
+      "height": 4096
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/035.jpg",
+      "width": 832,
+      "height": 1216
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/036.png",
+      "width": 5376,
+      "height": 3584
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/037.png",
+      "width": 5098,
+      "height": 7495
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/038.webp",
+      "width": 1600,
+      "height": 2560
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/039.png",
+      "width": 7680,
+      "height": 4320
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/040.jpeg",
+      "width": 4000,
+      "height": 4102
+    },
+    {
+      "src": "https://miorika-oss.oss-cn-hangzhou.aliyuncs.com/assets/images/albums/StunningImages/041.jpeg",
+      "width": 1920,
+      "height": 1200
+    }
+  ]
 }
